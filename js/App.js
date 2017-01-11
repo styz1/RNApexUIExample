@@ -13,27 +13,35 @@ class App extends Component {
 		uiTheme: getUiTheme(darkTheme),
 	};
 
+	static childContextTypes = {
+		changeuiTheme: PropTypes.func.isRequired,
+	};
+
+	getChildContext() {
+		return {
+			changeuiTheme: this.changeuiTheme,
+		};
+	}
+
+	changeuiTheme = (uiTheme) => {
+		this.setState({
+			uiTheme: uiTheme,
+		});
+	}
+
 	render() {
 		let {uiTheme} = this.state;
 
 		return (
 			<UiThemeProvider uiTheme={uiTheme}>
-				<View style={styles.container}>
-					<StatusBar
-						translucent={true}
-						{...uiTheme.statusBar}
-					/>
-					<AppNavigator />
-				</View>
+				<StatusBar
+					translucent={true}
+					{...uiTheme.statusBar}
+				/>
+				<AppNavigator />
 			</UiThemeProvider>
 		);
 	}
 }
-
-var styles = StyleSheet.create({
-	container: {
-		flex: 1,
-	},
-});
 
 module.exports = App;

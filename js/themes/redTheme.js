@@ -3,10 +3,10 @@
 
 module.exports = {
 	palette: {
-		iconTintColor: '#108ee9',
+		iconTintColor: 'tomato',
 	},
 	navBar: {
-		backgroundColor: '#1c2228',
+		backgroundColor: 'tomato',
 	},
 	statusBar: {
 		backgroundColor: 'rgba(0, 0, 0, 0.2)',

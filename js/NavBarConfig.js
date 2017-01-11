@@ -3,7 +3,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text, TouchableOpacity, Dimensions} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {VectorIcon} from 'react-native-apex-ui';
 
 var SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -44,7 +44,8 @@ var NavBarConfig = {
 			<TouchableOpacity
 				onPress={() => navigator.pop()}
 				style={styles.navBarLeftButton}>
-				<Ionicons
+				<VectorIcon
+					type='ionicon'
 					name="ios-arrow-back"
 					style={styles.backIcon}
 				/>

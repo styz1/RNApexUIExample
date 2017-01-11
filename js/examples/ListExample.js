@@ -1,0 +1,197 @@
+
+'use strict';
+
+import React, {Component, PropTypes} from 'react';
+import ReactNative, {View, Text, Image} from 'react-native';
+import {List} from 'react-native-apex-ui';
+const {ListItem, CheckItem, CheckCircleItem} = List;
+
+const styles = {
+	list: {
+		marginTop: 0,
+		borderWidth: 0,
+	},
+	plane: {
+		width: 65,
+		height: 65,
+		borderWidth: 1,
+		borderColor: '#b2b2b2',
+		borderRadius: 10,
+		marginRight: 10,
+	}
+};
+
+class DescriptionList extends Component {
+	render() {
+		return (
+			<List style={styles.list}>
+				<ListItem 
+					title='标题文字'
+					description='说明文字'
+					hideChevron={true}
+				/>
+				<ListItem 
+					title='标题文字'
+					description='说明文字'
+					hideChevron={true}
+				/>
+			</List>
+		);
+	}
+}
+
+class IconList extends Component {
+	render() {
+		return (
+			<List style={styles.list}>
+				<ListItem 
+					leftIcon={{name: 'github'}}
+					title='github'
+					description='github.com'
+					hideChevron={true}
+				/>
+				<ListItem 
+					leftIcon={{name: 'facebook-square', color: '#39519c'}}
+					title='facebook'
+					description='facebook'
+					hideChevron={true}
+				/>
+				<ListItem 
+					leftIcon={{name: 'wechat', color: '#00c615'}}
+					title='wechat'
+					description='wechat'
+					hideChevron={true}
+				/>
+			</List>
+		);
+	}
+}
+
+
+class ChevronList extends Component {
+	render() {
+		return (
+			<View>
+				<List>
+					<ListItem 
+						leftIcon={
+							<Image 
+								source={require('./img/plane.png')}
+								style={styles.plane}
+							/>
+						}
+						title={
+							<View>
+								<Text style={{fontSize: 20}}>标题(title)</Text>
+								<Text style={{marginTop: 10}}>副标题(subtitle)</Text>
+							</View>
+						}
+						onPress={() => {}}
+					/>
+				</List>
+				<List style={{borderBottomWidth: 0}}>
+					<ListItem 
+						leftIcon={{name: 'android', color: '#51bc2d'}}
+						title='android'
+						description='android'
+						onPress={() => {}}
+					/>
+					<ListItem 
+						leftIcon={{name: 'apple', color: '#303030'}}
+						title='apple'
+						description='apple'
+						onPress={() => {}}
+					/>
+				</List>
+			</View>
+		);
+	}
+}
+
+class SingleSelectList extends Component {
+	state = {
+		checkedValue: null,
+	};
+
+	setChecked(checkedValue) {
+		if(this.state.checkedValue === checkedValue) {
+			checkedValue = null;
+		}
+		this.setState({checkedValue});
+	}
+
+	render() {
+		return (
+			<List style={styles.list}>
+				<CheckItem 
+					title='github'
+					checked={this.state.checkedValue === 0}
+					onPress={() => this.setChecked(0)}
+				/>
+				<CheckItem 
+					title='facebook'
+					checked={this.state.checkedValue === 1}
+					onPress={() => this.setChecked(1)}
+				/>
+			</List>
+		);
+	}
+}
+
+class MultiSelectList extends Component {
+	state = {
+		checkedValues: new Set(),
+	};
+
+	setChecked(value) {
+		let {checkedValues} = this.state;
+		if(checkedValues.has(value)) {
+			checkedValues.delete(value);
+		}
+		else {
+			checkedValues.add(value);
+		}
+
+		this.setState({checkedValues});
+	}
+
+	render() {
+		return (
+			<List style={styles.list}>
+				<CheckCircleItem 
+					title='github'
+					checked={this.state.checkedValues.has(0)}
+					onPress={() => this.setChecked(0)}
+				/>
+				<CheckCircleItem 
+					title='facebook'
+					checked={this.state.checkedValues.has(1)}
+					onPress={() => this.setChecked(1)}
+				/>
+			</List>
+		);
+	}
+}
+
+exports.examples = [
+	{
+		title: '带说明的列表',
+		render: () => <DescriptionList />,
+	},
+	{
+		title: '带图标、说明的列表',
+		render: () => <IconList />,
+	},
+	{
+		title: '可点击列表',
+		render: () => <ChevronList />,
+	},
+	{
+		title: '单选列表',
+		render: () => <SingleSelectList />,
+	},
+	{
+		title: '复选列表',
+		render: () => <MultiSelectList />,
+	},
+];

@@ -26,8 +26,10 @@ class AppNavigator extends Component {
 				/>
 			);
 		}
+
+		let sceneStyle = {paddingTop: spacing.navbarHeight};
 		return (
-			<View style={[styles.sceneContainer, {paddingTop: spacing.navbarHeight}]}>
+			<View style={[styles.scene, sceneStyle]}>
 				{scene}
 			</View>
 		);
@@ -66,7 +68,7 @@ const styles = {
 	container: {
         flex: 1,
     },
-    sceneContainer: {
+    scene: {
     	flex: 1,
     },
 };

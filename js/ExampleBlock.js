@@ -40,9 +40,8 @@ const styles = {
 		borderRadius: 3,
 		borderWidth: StyleSheet.hairlineWidth,
 		borderColor: '#d6d7da',
-		backgroundColor: 'white',
-		margin: 10,
-		marginVertical: 5,
+		marginHorizontal: 10,
+		marginBottom: 15,
 		overflow: 'hidden',
 	},
 	titleContainer: {
