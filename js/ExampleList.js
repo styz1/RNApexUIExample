@@ -4,8 +4,13 @@
 import React, {Component, PropTypes} from 'react';
 import ReactNative, {StyleSheet, View, Text, ListView, TouchableHighlight} from 'react-native';
 import {List} from 'react-native-apex-ui';
+const ListItem = List.ListItem;
 
 const Examples = [
+	{
+		title: 'ButtonExample',
+		module: require('./examples/ButtonExample'),
+	},
 	{
 		title: 'ListExample',
 		module: require('./examples/ListExample'),
@@ -38,19 +43,11 @@ class ExampleList extends Component {
 
 	_renderRow = (title, description, handler) => {
 		return (
-			<View>
-				<TouchableHighlight onPress={handler}>
-					<View style={styles.row}>
-						<Text style={styles.rowTitleText}>
-							{title}
-						</Text>
-						<Text style={styles.rowDescriptionText}>
-							{description}
-						</Text>
-					</View>
-				</TouchableHighlight>
-				<View style={styles.separator} />
-			</View>
+			<ListItem 
+				title={title}
+				onPress={handler}
+				style={styles.row}
+			/>
 		);
 	}
 
@@ -70,26 +67,10 @@ const styles = {
 		paddingTop: 20,
         flex: 1,
     },
-	row: {
-		justifyContent: 'center',
-		paddingHorizontal: 15,
-		paddingVertical: 8,
-		backgroundColor: 'white',
-	},
-	separator: {
-		height: StyleSheet.hairlineWidth,
-		backgroundColor: '#bbbbbb',
-		marginLeft: 15,
-	},
-	rowTitleText: {
-		fontSize: 17,
-		fontWeight: '500',
-	},
-	rowDescriptionText: {
-		fontSize: 15,
-		color: '#888888',
-		lineHeight: 20,
-	},
+    row: {
+    	height: 50,
+    	backgroundColor: 'white',
+    }
 };
 
 module.exports = ExampleList;

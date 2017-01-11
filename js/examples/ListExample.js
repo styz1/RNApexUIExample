@@ -45,7 +45,7 @@ class IconList extends Component {
 		return (
 			<List style={styles.list}>
 				<ListItem 
-					leftIcon={{name: 'github'}}
+					leftIcon={{name: 'github', color: 'rgb(255, 64, 129)'}}
 					title='github'
 					description='github.com'
 					hideChevron={true}
@@ -54,12 +54,6 @@ class IconList extends Component {
 					leftIcon={{name: 'facebook-square', color: '#39519c'}}
 					title='facebook'
 					description='facebook'
-					hideChevron={true}
-				/>
-				<ListItem 
-					leftIcon={{name: 'wechat', color: '#00c615'}}
-					title='wechat'
-					description='wechat'
 					hideChevron={true}
 				/>
 			</List>
@@ -71,39 +65,45 @@ class IconList extends Component {
 class ChevronList extends Component {
 	render() {
 		return (
-			<View>
-				<List>
-					<ListItem 
-						leftIcon={
-							<Image 
-								source={require('./img/plane.png')}
-								style={styles.plane}
-							/>
-						}
-						title={
-							<View>
-								<Text style={{fontSize: 20}}>标题(title)</Text>
-								<Text style={{marginTop: 10}}>副标题(subtitle)</Text>
-							</View>
-						}
-						onPress={() => {}}
-					/>
-				</List>
-				<List style={{borderBottomWidth: 0}}>
-					<ListItem 
-						leftIcon={{name: 'android', color: '#51bc2d'}}
-						title='android'
-						description='android'
-						onPress={() => {}}
-					/>
-					<ListItem 
-						leftIcon={{name: 'apple', color: '#303030'}}
-						title='apple'
-						description='apple'
-						onPress={() => {}}
-					/>
-				</List>
-			</View>
+			<List style={styles.list}>
+				<ListItem 
+					leftIcon={{name: 'github', size: 40, color: 'rgb(255, 64, 129)'}}
+					title='github'
+					description='github'
+					onPress={() => {}}
+				/>
+				<ListItem 
+					leftIcon={{name: 'android', size: 40, color: 'rgb(164, 198, 57)'}}
+					title='android'
+					description='android'
+					onPress={() => {}}
+				/>
+			</List>
+		);
+	}
+}
+
+
+class CustomList extends Component {
+	render() {
+		return (
+			<List style={styles.list}>
+				<ListItem 
+					leftIcon={
+						<Image 
+							source={require('./img/plane.png')}
+							style={styles.plane}
+						/>
+					}
+					title={
+						<View>
+							<Text style={{fontSize: 20}}>标题(title)</Text>
+							<Text style={{marginTop: 10}}>副标题(subtitle)</Text>
+						</View>
+					}
+					onPress={() => {}}
+				/>
+			</List>
 		);
 	}
 }
@@ -175,23 +175,27 @@ class MultiSelectList extends Component {
 
 exports.examples = [
 	{
-		title: '带说明的列表',
+		title: '带说明',
 		render: () => <DescriptionList />,
 	},
 	{
-		title: '带图标、说明的列表',
+		title: '带图标、说明',
 		render: () => <IconList />,
 	},
 	{
-		title: '可点击列表',
+		title: '可点击',
 		render: () => <ChevronList />,
 	},
 	{
-		title: '单选列表',
+		title: '自定义图标，标题',
+		render: () => <CustomList />,
+	},
+	{
+		title: '单选',
 		render: () => <SingleSelectList />,
 	},
 	{
-		title: '复选列表',
+		title: '复选',
 		render: () => <MultiSelectList />,
 	},
 ];
