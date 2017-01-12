@@ -7,14 +7,10 @@ import {List} from 'react-native-apex-ui';
 const ListItem = List.ListItem;
 
 const Examples = [
-	{
-		title: 'ButtonExample',
-		module: require('./examples/ButtonExample'),
-	},
-	{
-		title: 'ListExample',
-		module: require('./examples/ListExample'),
-	},
+	require('./examples/ButtonExample'),
+	require('./examples/ListExample'),
+	require('./examples/AppHeaderExample'),
+
 ];
 
 const dataSource = new ListView.DataSource({
@@ -29,24 +25,27 @@ class ExampleList extends Component {
 		uiTheme: PropTypes.object.isRequired,
 	};
 
-	_handleRowPress = (example) => {
-		this.props.navigator.push(example);
+	_handleRowPress = (module) => {
+		this.props.navigator.push({module});
 	}
 
-	_renderExampleRow = (example: {title: string, module: Object}) => {
+	_renderExampleRow = (module: Object, sectionID, rowID) => {
 		return this._renderRow(
-			example.title,
-			example.description,
-			() => this._handleRowPress(example)
+			module.title,
+			module.description,
+			() => this._handleRowPress(module),
+			rowID,
 		);
 	}
 
-	_renderRow = (title, description, handler) => {
+	_renderRow = (title, description, handler, rowID) => {
+		let isLastRow = rowID == (dataSource.getRowCount() - 1);
 		return (
 			<ListItem 
-				title={title}
+				title={<ListItemTitle title={title} description={description} />}
 				onPress={handler}
 				style={styles.row}
+				hideSeparator={isLastRow}
 			/>
 		);
 	}
@@ -55,6 +54,7 @@ class ExampleList extends Component {
 		return (
 			<ListView
 				style={styles.list}
+				contentContainerStyle={styles.content}
 				dataSource={dataSource}
 				renderRow={this._renderExampleRow}
 			/>
@@ -62,15 +62,41 @@ class ExampleList extends Component {
 	}
 }
 
+function ListItemTitle({title, description}) {
+	if(description) {
+		description = 
+			<Text style={styles.description}>{description}</Text>
+	}
+	return (
+		<View>
+			<Text style={styles.title}>
+				{title}
+			</Text>
+			{description}
+		</View>
+	);
+}
+
 const styles = {
 	list: {
 		paddingTop: 20,
         flex: 1,
     },
+    content: {
+    	borderColor: '#d9d9d9',
+    	borderWidth: StyleSheet.hairlineWidth,
+    },
     row: {
-    	height: 50,
+    	height: 60,
     	backgroundColor: 'white',
-    }
+    },
+    title: {
+    	fontSize: 17,
+    },
+    description: {
+    	color: '#999',
+    	marginTop: 5,
+    },
 };
 
 module.exports = ExampleList;

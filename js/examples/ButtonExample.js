@@ -109,6 +109,7 @@ const styles = {
 
 };
 
+exports.title = 'ButtonExample';
 exports.examples = [
 	{
 		title: 'caption',

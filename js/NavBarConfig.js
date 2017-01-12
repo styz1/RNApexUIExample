@@ -11,7 +11,7 @@ const styles = {
 	navBarTitleText: {
 		color: '#fff',
 		fontWeight: '600',
-		fontSize: 17,
+		fontSize: 18,
 		lineHeight: 44,
 		textAlign: 'center',
 		width: Math.floor(SCREEN_WIDTH / 4 * 2),
@@ -62,7 +62,7 @@ var NavBarConfig = {
 
 	Title: function(route, navigator, index, navState) {
 		return (
-			<Text style={styles.navBarTitleText}>
+			<Text style={styles.navBarTitleText} numberOfLines={1}>
 				{extractRouteTitle(route)}
 			</Text>
 		);

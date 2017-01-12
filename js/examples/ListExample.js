@@ -172,7 +172,8 @@ class MultiSelectList extends Component {
 		);
 	}
 }
-
+exports.title = 'ListExample';
+exports.description = '列表视图，用于将信息以列表的结构显示';
 exports.examples = [
 	{
 		title: '带说明',

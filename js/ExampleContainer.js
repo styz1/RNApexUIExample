@@ -6,12 +6,12 @@ import ReactNative, {View, Text, ScrollView} from 'react-native';
 var ExampleBlock = require('./ExampleBlock');
 
 class ExampleContainer extends Component {
-	renderExample(example, i) {
+	renderExample =(example, i) => {
 		return (
 			<ExampleBlock
 				key={i}
 				{...example}>
-				{example.render()}
+				{example.render({navigator: this.props.navigator})}
 			</ExampleBlock>
 		);
 	}
@@ -23,7 +23,7 @@ class ExampleContainer extends Component {
 		}
 
 		if (!module.examples) {
-      		return React.createElement(module);
+      		return React.createElement(module, {navigator: this.props.navigator});
 		}
 
 		return (

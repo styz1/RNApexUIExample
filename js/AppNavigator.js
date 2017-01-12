@@ -5,15 +5,28 @@ import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text, Platform, Navigator} from 'react-native';
 var ExampleList = require('./ExampleList');
 var ExampleContainer = require('./ExampleContainer');
-var NavBarConfig = require('./NavBarConfig');
+var NavigationBar = require('./NavigationBar');
 
 class AppNavigator extends Component {
 	static contextTypes = {
 		uiTheme: PropTypes.object.isRequired,
 	};
 
-	renderScene = (route = {}, navigator) => {
+	state = {
+		navBarHidden: false,
+	};
+
+	onWillFocus = (route = {}) => {
+		let {navBarHidden} = (route.module || {});
+		navBarHidden = navBarHidden === true;
+		if(navBarHidden !== this.state.navBarHidden) {
+			this.setState({navBarHidden});
+		}
+	}
+
+	renderScene = (route, navigator) => {
 		const {spacing} = this.context.uiTheme;
+		let {navBarHidden} = (route.module || {});
 		let scene;
 
 		if(!route || !route.module) {
@@ -21,13 +34,13 @@ class AppNavigator extends Component {
 		} else {
 			scene = (
 				<ExampleContainer 
-					{...route} 
+					module={route.module}
 					navigator={navigator} 
 				/>
 			);
 		}
 
-		let sceneStyle = {paddingTop: spacing.navbarHeight};
+		let sceneStyle = !navBarHidden && {paddingTop: spacing.navbarHeight};
 		return (
 			<View style={[styles.scene, sceneStyle]}>
 				{scene}
@@ -40,8 +53,9 @@ class AppNavigator extends Component {
 
 		return (
 			<Navigator
+				onWillFocus={this.onWillFocus}
 				style={[styles.container, {backgroundColor: palette.containerColor}]}
-				configureScene={route => {
+				configureScene={(route = {}) => {
 					if (Platform.OS === 'android') {
 						return Navigator.SceneConfigs.FloatFromBottomAndroid;
 					}
@@ -54,8 +68,8 @@ class AppNavigator extends Component {
 				initialRoute={{}}
 				renderScene={this.renderScene}
 				navigationBar={
-					<Navigator.NavigationBar
-						routeMapper={NavBarConfig}
+					<NavigationBar
+						navBarHidden={this.state.navBarHidden}
 						style={{backgroundColor: navBar.backgroundColor}}
 					/>
 				}
