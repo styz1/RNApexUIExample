@@ -10,6 +10,7 @@ const Examples = [
 	require('./examples/ButtonExample'),
 	require('./examples/ListExample'),
 	require('./examples/AppHeaderExample'),
+	require('./examples/PaperExample'),
 
 ];
 
