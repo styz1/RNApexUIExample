@@ -13,6 +13,7 @@ const Examples = [
 	require('./examples/AppHeaderExample'),
 	require('./examples/PaperExample'),
 	require('./examples/PopoverExample'),
+	require('./examples/DialogExample'),
 	
 
 ];
@@ -91,7 +92,6 @@ const styles = {
     	borderWidth: StyleSheet.hairlineWidth,
     },
     row: {
-    	height: 60,
     	backgroundColor: 'white',
     },
     title: {
