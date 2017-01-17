@@ -12,6 +12,8 @@ const Examples = [
 	require('./examples/ListExample'),
 	require('./examples/AppHeaderExample'),
 	require('./examples/PaperExample'),
+	require('./examples/PopoverExample'),
+	
 
 ];
 
