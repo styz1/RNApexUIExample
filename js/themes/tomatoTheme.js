@@ -10,7 +10,7 @@ module.exports = {
 		backgroundColor: 'tomato',
 	},
 	statusBar: {
-		backgroundColor: 'rgba(0, 0, 0, 0.2)',
+		backgroundColor: 'rgba(0, 0, 0, 0)',
 		barStyle: 'light-content',
 	}
 };

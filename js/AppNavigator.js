@@ -56,9 +56,6 @@ class AppNavigator extends Component {
 				onWillFocus={this.onWillFocus}
 				style={styles.container}
 				configureScene={(route = {}) => {
-					if (Platform.OS === 'android') {
-						return Navigator.SceneConfigs.FloatFromBottomAndroid;
-					}
 					if (route.share || route.settings) {
 						return Navigator.SceneConfigs.FloatFromBottom;
 					} else {

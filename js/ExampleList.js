@@ -8,6 +8,7 @@ const ListItem = List.ListItem;
 
 const Examples = [
 	require('./examples/ChangeUIExample'),
+
 	require('./examples/VectorIconExample'),
 	require('./examples/ButtonExample'),
 	require('./examples/ListExample'),
@@ -58,6 +59,14 @@ class ExampleList extends Component {
 		);
 	}
 
+	renderTopSpace() {
+		return <View style={{height: 20}} />
+	}
+
+	renderBottomSpace() {
+		return <View style={{height: 50}} />
+	}
+
 	render() {
 		return (
 			<ListView
@@ -65,6 +74,8 @@ class ExampleList extends Component {
 				contentContainerStyle={styles.content}
 				dataSource={dataSource}
 				renderRow={this._renderExampleRow}
+				renderHeader={this.renderTopSpace}
+				renderFooter={this.renderBottomSpace}
 			/>
 		);
 	}
@@ -87,7 +98,6 @@ function ListItemTitle({title, description}) {
 
 const styles = {
 	list: {
-		paddingTop: 20,
         flex: 1,
     },
     content: {
@@ -95,7 +105,7 @@ const styles = {
     	borderWidth: StyleSheet.hairlineWidth,
     },
     row: {
-    	backgroundColor: 'white',
+    	backgroundColor: 'rgba(255,255,255,.95)',
     },
     title: {
     	fontSize: 17,
