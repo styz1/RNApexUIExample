@@ -17,6 +17,8 @@ const Examples = [
 	require('./examples/PopoverExample'),
 	require('./examples/DialogExample'),
 	require('./examples/SideboardExample'),
+	require('./examples/HeaderDrawerExample'),
+
 
 	
 
@@ -59,23 +61,15 @@ class ExampleList extends Component {
 		);
 	}
 
-	renderTopSpace() {
-		return <View style={{height: 20}} />
-	}
-
-	renderBottomSpace() {
-		return <View style={{height: 50}} />
-	}
-
 	render() {
 		return (
 			<ListView
 				style={styles.list}
 				contentContainerStyle={styles.content}
+				contentOffset={{y: -20}}
+				contentInset={{top: 20, bottom: 50}}
 				dataSource={dataSource}
 				renderRow={this._renderExampleRow}
-				renderHeader={this.renderTopSpace}
-				renderFooter={this.renderBottomSpace}
 			/>
 		);
 	}

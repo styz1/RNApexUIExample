@@ -46,4 +46,4 @@ const styles = {
 
 module.exports = PaperExample;
 module.exports.title = 'PaperExample';
-module.exports.description = '阴影视图';
+module.exports.description = '阴影视图（IOS ONLY）';
