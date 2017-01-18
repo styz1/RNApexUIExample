@@ -2,8 +2,8 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import ReactNative, {View, Text, TouchableHighlight} from 'react-native';
-import {Button, Popover} from 'react-native-apex-ui';
+import ReactNative, {View, ScrollView, Text, TouchableHighlight} from 'react-native';
+import {Button, Popover, Layer} from 'react-native-apex-ui';
 
 class PopoverExample extends Component {
 	state = {
@@ -100,6 +100,7 @@ const styles = {
     button: {
     	margin: 20,
     	backgroundColor: 'white',
+    	borderWidth: 1,
     },
     optionText: {
     	paddingHorizontal: 40,

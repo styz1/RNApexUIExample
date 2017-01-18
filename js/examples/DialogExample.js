@@ -59,8 +59,8 @@ const styles = {
     	marginTop: 64,
     	padding: 0,
     	paddingHorizontal: 15,
-    	borderRadius: 3,
     	backgroundColor: 'white',
+    	borderWidth: 1,
     },
     showText: {
     	fontSize: 18,

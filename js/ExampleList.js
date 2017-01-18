@@ -14,6 +14,8 @@ const Examples = [
 	require('./examples/PaperExample'),
 	require('./examples/PopoverExample'),
 	require('./examples/DialogExample'),
+	require('./examples/SideboardExample'),
+	
 	
 
 ];
