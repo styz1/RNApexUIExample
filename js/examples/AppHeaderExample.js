@@ -15,13 +15,13 @@ class AppHeaderExample extends Component {
 			<View style={styles.container}>
 				<AppHeader 
 					leftItem={{
-						icon: {name: 'chevron-left', size: 28, color: 'red'},
+						icon: {name: 'chevron-left', size: 28, color: '#2c8cff'},
 						caption: <Text style={styles.backText}>返回</Text>,
 						onPress: () => this.props.navigator.pop(),
 					}}
 					title='我是自定义的导航栏'
 					rightItem={{
-						icon: {name: 'search', color: 'red'}
+						icon: {name: 'search', color: '#2c8cff'}
 					}}
 				/>
 			</View>
@@ -35,7 +35,7 @@ const styles = {
     },
     backText: {
     	fontSize: 17,
-    	color: 'red'
+    	color: '#2c8cff'
     }
 };
 

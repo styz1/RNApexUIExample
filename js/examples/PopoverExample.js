@@ -23,7 +23,7 @@ class PopoverExample extends Component {
 			<View style={styles.container}>
 				<Button 
 					ref='default'
-					icon={{type: 'ionicon', name: 'ios-arrow-down'}}
+					icon={{type: 'ionicon', name: 'ios-arrow-down', color: '#2c8cff'}}
 					caption='default animation'
 					onPress={() => this.setState({open1: true})}
 					style={styles.button}
@@ -31,7 +31,7 @@ class PopoverExample extends Component {
 
 				<Button 
 					ref='custom'
-					icon={{type: 'ionicon', name: 'ios-arrow-down'}}
+					icon={{type: 'ionicon', name: 'ios-arrow-down', color: '#2c8cff'}}
 					caption='custom animation'
 					onPress={() => this.setState({open2: true})}
 					style={styles.button}
@@ -73,7 +73,8 @@ class CustomAnimation extends Popover.Animation {
 	prepareStyle() {
 		let {layout, anim} = this.state;
 		return {
-			// opacity: anim,
+			opacity: anim,
+			backgroundColor: this.interpolate('white', 'gray'),
 			transform: [
 				{rotateY: this.interpolate('180deg', '0deg')},
 			],
@@ -95,10 +96,8 @@ function Option({children}) {
 const styles = {
 	container: {
         flex: 1,
-        alignItems: 'flex-start',
     },
     button: {
-    	height: 44,
     	margin: 20,
     	backgroundColor: 'white',
     },

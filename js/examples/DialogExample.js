@@ -23,9 +23,9 @@ class DialogExample extends Component {
 			<View style={styles.container}>
 				
 				<Button 
-					caption='show modal dialog'
-					color='#2c8cff'
-					style={styles.button}
+					caption='Dialog'
+					style={styles.showButton}
+					captionStyle={styles.showText}
 					onPress={this.handleOpen}
 				/>
 
@@ -53,13 +53,18 @@ class DialogExample extends Component {
 const styles = {
 	container: {
         flex: 1,
-        backgroundColor: 'white',
-        justifyContent: 'center',
         alignItems: 'center',
     },
-    button: {
-    	height: 50,
-    	borderRadius: 25,
+    showButton: {
+    	marginTop: 64,
+    	padding: 0,
+    	paddingHorizontal: 15,
+    	borderRadius: 3,
+    	backgroundColor: 'white',
+    },
+    showText: {
+    	fontSize: 18,
+    	lineHeight: 46,
     },
     dialog: {
     	// height: 200
@@ -77,7 +82,7 @@ const styles = {
     },
     okText: {
     	fontSize: 18,
-    	color: '#3cc51f',
+    	color: '#2c8cff',
     }
 };
 

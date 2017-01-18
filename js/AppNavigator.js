@@ -25,7 +25,7 @@ class AppNavigator extends Component {
 	}
 
 	renderScene = (route, navigator) => {
-		const {spacing} = this.context.uiTheme;
+		const {spacing, palette} = this.context.uiTheme;
 		let {navBarHidden} = (route.module || {});
 		let scene;
 
@@ -42,7 +42,7 @@ class AppNavigator extends Component {
 
 		let sceneStyle = !navBarHidden && {paddingTop: spacing.navbarHeight};
 		return (
-			<View style={[styles.scene, sceneStyle]}>
+			<View style={[styles.scene, sceneStyle, {backgroundColor: palette.containerColor}]}>
 				{scene}
 			</View>
 		);
@@ -54,7 +54,7 @@ class AppNavigator extends Component {
 		return (
 			<Navigator
 				onWillFocus={this.onWillFocus}
-				style={[styles.container, {backgroundColor: palette.containerColor}]}
+				style={styles.container}
 				configureScene={(route = {}) => {
 					if (Platform.OS === 'android') {
 						return Navigator.SceneConfigs.FloatFromBottomAndroid;
