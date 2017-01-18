@@ -3,7 +3,8 @@
 
 module.exports = {
 	palette: {
-		iconTintColor: 'tomato',
+		iconTintColor: 'deeppink',
+		containerColor: 'antiquewhite',
 	},
 	navBar: {
 		backgroundColor: 'tomato',
