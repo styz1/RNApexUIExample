@@ -19,7 +19,10 @@ const Examples = [
 	require('./examples/SideboardExample'),
 	require('./examples/HeaderDrawerExample'),
 
-
+	require('./examples/PureListViewExample'),
+	require('./examples/ViewPagerExample'),
+	require('./examples/CarouselExample'),
+	
 	
 
 ];
@@ -67,7 +70,7 @@ class ExampleList extends Component {
 				style={styles.list}
 				contentContainerStyle={styles.content}
 				contentOffset={{y: -20}}
-				contentInset={{top: 20, bottom: 50}}
+				contentInset={{top: 20, bottom: 60}}
 				dataSource={dataSource}
 				renderRow={this._renderExampleRow}
 			/>

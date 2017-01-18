@@ -78,7 +78,7 @@ const styles = {
     	height: 70,
     	justifyContent: 'center',
     	alignItems: 'center',
-    	backgroundColor: 'rgba(255,255,255,.8)',
+    	borderWidth: 1,
     },
     headerBtn: {
     	borderWidth: 1,
