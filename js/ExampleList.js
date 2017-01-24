@@ -7,6 +7,8 @@ import {List} from 'react-native-apex-ui';
 const ListItem = List.ListItem;
 
 const Examples = [
+	require('./examples/TouchableRippleExample'),
+
 	require('./examples/ChangeUIExample'),
 
 	require('./examples/VectorIconExample'),
