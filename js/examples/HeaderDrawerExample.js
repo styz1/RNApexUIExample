@@ -69,19 +69,17 @@ class HeaderDrawerExample extends Component {
 const styles = {
 	container: {
 		flex: 1,
-		backgroundColor: 'white',
 	},
     content: {
     	flex: 1,
     },
     header: {
-    	height: 70,
-    	justifyContent: 'center',
-    	alignItems: 'center',
-    	borderWidth: 1,
+    	height: 64,
+		backgroundColor: 'white',
+		borderWidth: 1,
     },
     headerBtn: {
-    	borderWidth: 1,
+    	flex: 1,
     },
     headerBtnContent: {
     	justifyContent: 'center',
