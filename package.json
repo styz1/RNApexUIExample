@@ -2,6 +2,19 @@
   "name": "RNApexUIExample",
   "version": "0.0.1",
   "private": true,
+   "author": {
+    "name": "lin jinyi",
+    "email": "597790581@qq.com"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-component",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "apex"
+  ],
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
