@@ -43,7 +43,7 @@ class RippleButtonExample extends Component {
 				<RippleButton 
 					caption='BUTTON'
 					icon={{name: 'android'}}
-					color='#93ce33'
+					backgroundColor='#93ce33'
 				/>
 			</Paper>
 		);

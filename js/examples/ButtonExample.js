@@ -15,7 +15,7 @@ class CaptionButton extends Component {
 				/>
 				<Button 
 					caption='Default'
-					color='#108ee9'
+					backgroundColor='#108ee9'
 					style={styles.button}
 				/>
 			</View>
@@ -29,12 +29,14 @@ class IconButton extends Component {
 			<View style={styles.container}>
 				<Button 
 					icon={{name: 'github'}}
-					color='rgb(255, 64, 129)'
+					backgroundColor='rgb(255, 64, 129)'
+					iconColor='#fff'
 					style={styles.iconButton}
 				/>
 				<Button 
 					icon={{name: 'android'}}
-					color='rgb(164, 198, 57)'
+					backgroundColor='rgb(164, 198, 57)'
+					iconColor='#fff'
 					style={styles.iconButton}
 				/>
 			</View>
@@ -49,13 +51,17 @@ class IconCaptionButton extends Component {
 				<Button 
 					icon={{name: 'github'}}
 					caption='github'
-					color='rgb(255, 64, 129)'
+					backgroundColor='rgb(255, 64, 129)'
+					iconColor='#fff'
+					captionColor='#fff'
 					style={styles.button}
 				/>
 				<Button 
 					icon={{name: 'android'}}
 					caption='android'
-					color='rgb(164, 198, 57)'
+					backgroundColor='rgb(164, 198, 57)'
+					iconColor='#fff'
+					captionColor='#fff'
 					style={styles.button}
 				/>
 			</View>
@@ -75,14 +81,18 @@ class LoadingButton extends Component {
 					loading={this.state.loading}
 					icon={{name: 'github'}}
 					caption='github'
-					color='rgb(255, 64, 129)'
+					backgroundColor='rgb(255, 64, 129)'
+					iconColor='#fff'
+					captionColor='#fff'
 					style={styles.button}
 				/>
 				<Button 
 					loading={this.state.loading}
 					icon={{name: 'android'}}
 					caption='android'
-					color='rgb(164, 198, 57)'
+					backgroundColor='rgb(164, 198, 57)'
+					iconColor='#fff'
+					captionColor='#fff'
 					style={styles.button}
 				/>
 			</View>

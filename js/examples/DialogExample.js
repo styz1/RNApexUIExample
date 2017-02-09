@@ -20,12 +20,10 @@ class DialogExample extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
-				
+			<View>
 				<Button 
-					caption='Dialog'
+					caption='BUTTON'
 					style={styles.showButton}
-					captionStyle={styles.showText}
 					onPress={this.handleOpen}
 				/>
 
@@ -39,10 +37,10 @@ class DialogExample extends Component {
 						自定义的消息内容.
 					</Text>
 					<Button 
-						caption='确认'
+						caption={<Text style={styles.okText}>确认</Text>}
 						style={styles.okButton}
-						captionStyle={styles.okText}
 						onPress={this.handleClose}
+						activeOpacity={.2}
 					/>
 				</Dialog>
 			</View>
@@ -51,20 +49,10 @@ class DialogExample extends Component {
 }
 
 const styles = {
-	container: {
-        flex: 1,
-        alignItems: 'center',
-    },
     showButton: {
-    	marginTop: 64,
-    	padding: 0,
-    	paddingHorizontal: 15,
+    	margin: 10,
     	backgroundColor: 'white',
     	borderWidth: 1,
-    },
-    showText: {
-    	fontSize: 18,
-    	lineHeight: 46,
     },
     dialog: {
     	// height: 200
@@ -86,6 +74,12 @@ const styles = {
     }
 };
 
-module.exports = DialogExample;
-module.exports.title = 'DialogExample';
-module.exports.description = '若系统的alert无法满足需求，则可以自定义实现与alert形式相似的dialog';
+exports.title = 'DialogExample';
+exports.description = '若系统的alert无法满足需求，则可以自定义实现与alert形式相似的dialog';
+exports.examples = [
+	{
+		title: 'Open a dialog',
+		render: () => <DialogExample />,
+	},
+];
+

@@ -21,8 +21,9 @@ class TomatoUIExample extends Component {
 		return (
 			<Button 
 				caption='CHANGE'
-				color='tomato'
-				style={{margin: 15}}
+				backgroundColor='tomato'
+				captionColor='#fff'
+				style={styles.button}
 				onPress={this.doChange}
 			/>
 		);
@@ -42,11 +43,18 @@ class DarkUIExample extends Component {
 		return (
 			<Button 
 				caption='CHANGE'
-				color='#1c2228'
-				style={{margin: 15}}
+				backgroundColor='#1c2228'
+				captionColor='#fff'
+				style={styles.button}
 				onPress={this.doChange}
 			/>
 		);
+	}
+}
+
+const styles = {
+	button: {
+		margin: 10,
 	}
 }
 

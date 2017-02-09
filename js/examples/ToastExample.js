@@ -3,16 +3,16 @@
 
 import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text} from 'react-native';
-import {RippleButton, Toast, VectorIcon} from 'react-native-apex-ui';
+import {RippleButton, Paper, Toast, VectorIcon} from 'react-native-apex-ui';
 
 class SimpleToastExample extends Component {
 	state = {
 		open: false,
 	};
 
-	toggle = () => {
+	handleTouchTap = () => {
 		this.setState({
-			open: !this.state.open,
+			open: true,
 		});
 	}
 
@@ -25,11 +25,13 @@ class SimpleToastExample extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<RippleButton 
-					caption='BUTTON'
-					onPress={this.toggle}
-					style={styles.button}
-				/>
+				<Paper>
+					<RippleButton 
+						caption='BUTTON'
+						backgroundColor='#ff0077'
+						onPress={this.handleTouchTap}
+					/>
+				</Paper>
 				<Toast 
 					open={this.state.open}
 					message='Hello toast!'
@@ -45,9 +47,9 @@ class CustomToastExample extends Component {
 		open: false,
 	};
 
-	toggle = () => {
+	handleTouchTap = () => {
 		this.setState({
-			open: !this.state.open,
+			open: true,
 		});
 	}
 
@@ -60,11 +62,13 @@ class CustomToastExample extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<RippleButton 
-					caption='BUTTON'
-					onPress={this.toggle}
-					style={styles.button}
-				/>
+				<Paper>
+					<RippleButton 
+						caption='BUTTON'
+						backgroundColor='#ff0077'
+						onPress={this.handleTouchTap}
+					/>
+				</Paper>
 				<Toast 
 					open={this.state.open}
 					onRequestClose={this.handleRequestClose}
@@ -86,10 +90,6 @@ class CustomToastExample extends Component {
 const styles = {
 	container: {
 		padding: 10,
-	},
-	button: {
-		backgroundColor: 'white',
-		borderWidth: 1,
 	},
 	icon: {
 		color: '#00aaff',
