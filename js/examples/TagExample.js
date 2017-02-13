@@ -52,10 +52,9 @@ class TagExample extends Component {
 				</Tag>
 
 				<Tag 
-					style={styles.tag} 
+					style={[styles.tag, styles.bellTag]} 
 					textColor='#fff' 
-					backgroundColor='#fffaf3'
-					style={styles.bellTag}>
+					backgroundColor='#fffaf3'>
 					<VectorIcon 
 						name='bell-o'
 						color='#fb6900'
