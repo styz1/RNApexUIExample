@@ -39,7 +39,6 @@ class PopoverExample extends Component {
 
 				<Popover
 					masked={false}
-					offset={{y: 2}}
 					open={this.state.open1}
 					anchorEl={this.refs.default}
 					onRequestClose={this.handleRequestClose}>

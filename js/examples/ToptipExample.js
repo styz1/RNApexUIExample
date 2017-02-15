@@ -42,41 +42,120 @@ class ToptipExample extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Button 
+				<MyButton 
 					caption='显示消息'
-					style={styles.button}
 					onPress={this.createRequestOpenHandler('info', '显示消息')}
 				/>
 
-				<Button 
+				<MyButton 
 					caption='显示成功'
-					style={styles.button}
 					onPress={this.createRequestOpenHandler('success', '操作成功')}
 				/>
 
-				<Button 
+				<MyButton 
 					caption='显示失败'
-					style={styles.button}
 					onPress={this.createRequestOpenHandler('error', '操作失败')}
 				/>
 
-				<Button 
+				<MyButton 
 					caption='显示警告'
-					style={styles.button}
 					onPress={this.createRequestOpenHandler('warning', '警告')}
 				/>
 
 				<Toptip 
-					style={styles.toptip}
 					text={this.state.message}
 					type={this.state.type}
 					open={this.state.open}
 					onRequestClose={this.handleRequestClose}
+					testID='1'
 				/>
 			</View>
 		);
 	}
 }
+
+class CustomToptipExample extends Component {
+	state = {
+		open: false,
+		type: null,
+		message: null,
+		icon: null,
+	};
+
+	createRequestOpenHandler = (type, message) => {
+		return async () => {
+			if(this.state.open) {
+				this.setState({
+					open: false,
+				});
+				await sleep(150);
+			}
+			this.setState({
+				open: true,
+				type,
+				message,
+				icon: TOPTIP_ICONS[type]
+			});
+		}
+	}
+
+	handleRequestClose = () => {
+		this.setState({
+			open: false,
+		});
+	};
+
+	render() {
+		return (
+			<View style={styles.container}>
+				<MyButton 
+					caption='显示成功'
+					onPress={this.createRequestOpenHandler('success', '操作成功')}
+				/>
+
+				<MyButton 
+					caption='显示失败'
+					onPress={this.createRequestOpenHandler('error', '操作失败')}
+				/>
+
+				<Toptip 
+					style={styles.toptip}
+					type={this.state.type}
+					open={this.state.open}
+					onRequestClose={this.handleRequestClose}
+					testID='2'
+				>
+					<VectorIcon {...this.state.icon} />
+					<Text style={styles.message}>{this.state.message}</Text>
+				</Toptip>
+			</View>
+		);
+	}
+}
+
+function MyButton(props) {
+	return (
+		<Button 
+			{...props}
+			caption={<Text style={styles.caption}>
+				{props.caption}
+			</Text>}
+			style={styles.button}
+		/>
+	);
+}
+
+
+const TOPTIP_ICONS = {
+	success: {
+		name: 'check',
+		color: '#fff'
+	},
+	error: {
+		name: 'close',
+		color: '#fff'
+	}
+};
 
 const styles = {
 	container: {
@@ -88,6 +167,20 @@ const styles = {
 		borderWidth: 1,
 		backgroundColor: 'white',
 	},
+	caption: {
+		fontSize: 14,
+	},
+	toptip: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	message: {
+		fontSize: 24,
+		padding: 10,
+		fontWeight: 'bold',
+		color: '#fff'
+	},
 };
 
 exports.title = 'ToptipExample';
@@ -96,5 +189,9 @@ exports.examples = [
 	{
 		title: 'Using a Component',
 		render: () => <ToptipExample />,
+	},
+	{
+		title: 'Custom Toptip',
+		render: () => <CustomToptipExample />,
 	}
 ];
