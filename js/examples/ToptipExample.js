@@ -137,10 +137,8 @@ function MyButton(props) {
 	return (
 		<Button 
 			{...props}
-			caption={<Text style={styles.caption}>
-				{props.caption}
-			</Text>}
 			style={styles.button}
+			caption={<Text style={styles.caption}>{props.caption}</Text>}
 		/>
 	);
 }
@@ -160,15 +158,18 @@ const TOPTIP_ICONS = {
 const styles = {
 	container: {
 		padding: 15,
+		backgroundColor: 'white',
 	},
 	button: {
-		padding: 13,
 		marginBottom: 15,
-		borderWidth: 1,
-		backgroundColor: 'white',
+		backgroundColor: '#f5f5f5',
 	},
 	caption: {
 		fontSize: 14,
+		paddingVertical: 5,
+		fontWeight: '500',
+		backgroundColor: 'transparent',
+		color: '#108ee9',
 	},
 	toptip: {
 		flexDirection: 'row',

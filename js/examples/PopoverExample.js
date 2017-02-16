@@ -3,7 +3,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, ScrollView, Text, TouchableHighlight} from 'react-native';
-import {Button, Popover, Layer} from 'react-native-apex-ui';
+import {Button, Popover, LayerContainer} from 'react-native-apex-ui';
 
 class PopoverExample extends Component {
 	state = {
@@ -17,6 +17,10 @@ class PopoverExample extends Component {
 			open2: false,
 		});
 	};
+
+	getLayerContainer = () => {
+		return this.refs.layerContainer;
+	}
 
 	render() {
 		return (
@@ -38,6 +42,7 @@ class PopoverExample extends Component {
 				/>
 
 				<Popover
+					getLayerContainer={this.getLayerContainer}
 					masked={false}
 					open={this.state.open1}
 					anchorEl={this.refs.default}
@@ -51,6 +56,7 @@ class PopoverExample extends Component {
 				</Popover>
 
 				<Popover
+					getLayerContainer={this.getLayerContainer}
 					masked={false}
 					animation={CustomAnimation}
 					open={this.state.open2}
@@ -63,6 +69,8 @@ class PopoverExample extends Component {
 					<Option>option 5</Option>
 					<Option>option 6</Option>
 				</Popover>
+
+				<LayerContainer ref='layerContainer' />
 			</View>
 		);
 	}
