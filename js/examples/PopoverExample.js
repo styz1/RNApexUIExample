@@ -18,10 +18,6 @@ class PopoverExample extends Component {
 		});
 	};
 
-	getLayerContainer = () => {
-		return this.refs.layerContainer;
-	}
-
 	render() {
 		return (
 			<View style={styles.container}>
@@ -42,8 +38,9 @@ class PopoverExample extends Component {
 				/>
 
 				<Popover
-					getLayerContainer={this.getLayerContainer}
 					masked={false}
+					useLayerForClickAway={false}
+					layerStyle={styles.layer}
 					open={this.state.open1}
 					anchorEl={this.refs.default}
 					onRequestClose={this.handleRequestClose}>
@@ -56,8 +53,9 @@ class PopoverExample extends Component {
 				</Popover>
 
 				<Popover
-					getLayerContainer={this.getLayerContainer}
 					masked={false}
+					useLayerForClickAway={false}
+					layerStyle={styles.layer}
 					animation={CustomAnimation}
 					open={this.state.open2}
 					anchorEl={this.refs.custom}
@@ -103,6 +101,10 @@ function Option({children}) {
 const styles = {
 	container: {
         flex: 1,
+    },
+    layer: {
+    	right: undefined,
+    	bottom: undefined,
     },
     button: {
     	margin: 20,
