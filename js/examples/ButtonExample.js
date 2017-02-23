@@ -3,7 +3,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text} from 'react-native';
-import {Button} from 'react-native-apex-ui';
+import {Button, VectorIcon} from 'react-native-apex-ui';
 
 class CaptionButton extends Component {
 	render() {
@@ -11,11 +11,12 @@ class CaptionButton extends Component {
 			<View style={styles.container}>
 				<Button 
 					caption='Default'
-					style={styles.button}
+					style={[styles.button, {borderWidth: 1}]}
 				/>
 				<Button 
 					caption='Default'
 					backgroundColor='#108ee9'
+					captionColor='#fff'
 					style={styles.button}
 				/>
 			</View>
@@ -28,15 +29,13 @@ class IconButton extends Component {
 		return (
 			<View style={styles.container}>
 				<Button 
-					icon={{name: 'github'}}
+					icon={<VectorIcon name='github' color='#fff' />}
 					backgroundColor='rgb(255, 64, 129)'
-					iconColor='#fff'
 					style={styles.iconButton}
 				/>
 				<Button 
-					icon={{name: 'android'}}
+					icon={<VectorIcon name='android' color='#fff' />}
 					backgroundColor='rgb(164, 198, 57)'
-					iconColor='#fff'
 					style={styles.iconButton}
 				/>
 			</View>
@@ -49,18 +48,16 @@ class IconCaptionButton extends Component {
 		return (
 			<View style={styles.container}>
 				<Button 
-					icon={{name: 'github'}}
+					icon={<VectorIcon name='github' color='#fff' />}
 					caption='github'
 					backgroundColor='rgb(255, 64, 129)'
-					iconColor='#fff'
 					captionColor='#fff'
 					style={styles.button}
 				/>
 				<Button 
-					icon={{name: 'android'}}
+					icon={<VectorIcon name='android' color='#fff' />}
 					caption='android'
 					backgroundColor='rgb(164, 198, 57)'
-					iconColor='#fff'
 					captionColor='#fff'
 					style={styles.button}
 				/>
@@ -79,19 +76,17 @@ class LoadingButton extends Component {
 			<View style={styles.container}>
 				<Button 
 					loading={this.state.loading}
-					icon={{name: 'github'}}
+					icon={<VectorIcon name='github' color='#fff' />}
 					caption='github'
 					backgroundColor='rgb(255, 64, 129)'
-					iconColor='#fff'
 					captionColor='#fff'
 					style={styles.button}
 				/>
 				<Button 
 					loading={this.state.loading}
-					icon={{name: 'android'}}
+					icon={<VectorIcon name='android' color='#fff' />}
 					caption='android'
 					backgroundColor='rgb(164, 198, 57)'
-					iconColor='#fff'
 					captionColor='#fff'
 					style={styles.button}
 				/>
@@ -110,6 +105,7 @@ const styles = {
     	marginRight: 20,
     },
     iconButton: {
+    	minWidth: undefined,
     	marginRight: 20,
     	width: 40,
     	height: 40,
