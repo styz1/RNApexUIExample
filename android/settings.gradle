@@ -1,3 +1,14 @@
 rootProject.name = 'RNApexUIExample'
+//include ':react-native-apex-charts'
+//project(':react-native-apex-charts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apex-charts/android/AXCharts/library')
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
 
 include ':app'
+
+
+include ':mpchartlib'
+project(':mpchartlib').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apex-charts/android/AXCharts/mpchartlib')
+
+include ':rnchart'
+project(':rnchart').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apex-charts/android/AXCharts/rnchart')

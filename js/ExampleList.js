@@ -7,6 +7,8 @@ import {List} from 'react-native-apex-ui';
 const ListItem = List.ListItem;
 
 const Examples = [
+  require('./examples/chart/AXLineChartExample'),
+  require('./examples/chart/AXPieChartExample'),
 	require('./examples/ActionSheetExample'),
 	require('./examples/TooltipExample'),
 	require('./examples/ToptipExample'),
