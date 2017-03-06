@@ -8,6 +8,7 @@ const ListItem = List.ListItem;
 
 const Examples = [
   require('./examples/chart/AXLineChartExample'),
+  require('./examples/chart/AXBarChartExample'),
   require('./examples/chart/AXPieChartExample'),
 	require('./examples/ActionSheetExample'),
 	require('./examples/TooltipExample'),

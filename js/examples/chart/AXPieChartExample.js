@@ -51,8 +51,8 @@ class AXPieChartExample extends Component {
         fontSize: 12,
       },
       valueTextColor: 'black',
-      xVals: ['Java','OC','JS','C++','PHP'],
-      dataSets:[{
+      dataSet:{
+        xVals: ['Java','OC','JS','C++','PHP'],
         yVals: [40,10,23,20,10],
         yValuePosition:'outside',
         xValuePosition:'inside',
@@ -64,7 +64,7 @@ class AXPieChartExample extends Component {
         valueLineVariableLength: true,
         minmumPercentValue: 1,
         colors:['red','green','blue','gray','black'],
-      }]
+      }
     }} />
 
       </View>;
@@ -76,7 +76,7 @@ module.exports = {
   title: 'AXPieChartExample',
   description: '饼图',
   examples: [{
-    title: 'AXLineChart',
+    title: 'AXPieChart',
     render: () => <AXPieChartExample />
   }]
 }

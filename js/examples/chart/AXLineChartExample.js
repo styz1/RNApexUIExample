@@ -18,10 +18,12 @@ class AXLineChartExample extends Component {
 
 
     return <View style={{height:300}}><AXLineChart style={{flex:1}}
+                                                   onChartValueSelected={(e)=>{console.log("==>x",e)}}
                                                    parameter={{
     xAxisDuration: 1,
     yAxisDuration: 2.5,
     easingOption: 'easeInOutQuart',
+    //edgeInsets:{bottom:100,left:10,top:10,right:10}
   }}
                                                    legend={{
     enabled: true,
@@ -31,7 +33,6 @@ class AXLineChartExample extends Component {
     },
     textColor: 'black',
     form: 'line',
-    position: 'aboveChartRight',
 
   }}
                                                    rightAxis={{
@@ -65,11 +66,11 @@ class AXLineChartExample extends Component {
       fontSize: 12,
 
     },
-    labelRotationAngle:90,
+    labelRotationAngle:60,
     enabled: true,
     drawGridLinesEnabled: false,
     avoidFirstLastClippingEnabled: false,
-    drawAxisLineEnabled: false,
+    drawAxisLineEnabled: true,
   }}
                                                    data={{
     valueFont: {
