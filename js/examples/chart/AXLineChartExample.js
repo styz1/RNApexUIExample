@@ -186,6 +186,22 @@ class AXLineFillChartExample extends Component {
         cubicIntensity: 0.2,
         drawFilledEnabled:true,
         fillColor:'#ff000033'
+      },
+      {
+        yVals: [18.6,16,17,10,15,16,17,10,10],
+        label: 'label 2',
+        lineWidth: 2,
+        circleRadius: 3,
+        color: '#4cd964',
+        circleColor: '#c969e0',
+        drawValuesEnabled: true,
+        drawCubicEnabled: false,
+        drawHorizontalHighlightIndicatorEnabled: false,
+        drawVerticalHighlightIndicatorEnabled: false,
+        drawCirclesEnabled: true,
+        cubicIntensity: 0.2,
+        drawFilledEnabled:true,
+        fillColor:'#ffff0033'
       }]
     }
   }/></View>;
