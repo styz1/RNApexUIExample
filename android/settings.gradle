@@ -1,6 +1,6 @@
 rootProject.name = 'RNApexUIExample'
 //include ':react-native-apex-charts'
-//project(':react-native-apex-charts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apex-charts/android/AXCharts/library')
+//project(':react-native-apex-charts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apex-charts/android/library')
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
 
