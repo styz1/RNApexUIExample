@@ -172,22 +172,6 @@ class AXLineFillChartExample extends Component {
     dataSets:
       [
       {
-        yVals: [8.6,6,7,10,5,6,7,10,0],
-        label: 'label 2',
-        lineWidth: 2,
-        circleRadius: 3,
-        color: '#4cd964',
-        circleColor: '#c969e0',
-        drawValuesEnabled: true,
-        drawCubicEnabled: false,
-        drawHorizontalHighlightIndicatorEnabled: false,
-        drawVerticalHighlightIndicatorEnabled: false,
-        drawCirclesEnabled: true,
-        cubicIntensity: 0.2,
-        drawFilledEnabled:true,
-        fillColor:'#ff000033'
-      },
-      {
         yVals: [18.6,16,17,10,15,16,17,10,10],
         label: 'label 2',
         lineWidth: 2,
@@ -201,7 +185,23 @@ class AXLineFillChartExample extends Component {
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
         drawFilledEnabled:true,
-        fillColor:'#ffff0033'
+        fillColor:'#ffff00ff'
+      },
+      {
+        yVals: [8.6,6,7,10,5,6,7,10,0],
+        label: 'label 2',
+        lineWidth: 2,
+        circleRadius: 3,
+        color: '#4cd964',
+        circleColor: '#c969e0',
+        drawValuesEnabled: true,
+        drawCubicEnabled: false,
+        drawHorizontalHighlightIndicatorEnabled: false,
+        drawVerticalHighlightIndicatorEnabled: false,
+        drawCirclesEnabled: true,
+        cubicIntensity: 0.2,
+        drawFilledEnabled:true,
+        fillColor:'#ff0000ff'
       }]
     }
   }/></View>;
@@ -224,5 +224,3 @@ module.exports = {
         }
     ]
 }
-
-
