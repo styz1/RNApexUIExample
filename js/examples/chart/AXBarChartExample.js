@@ -27,7 +27,6 @@ class AXBarChartStackExample extends Component {
     },
     textColor: 'black',
     form: 'square',
-    position: 'aboveChartRight',
 
   }}
                   rightAxis={{
@@ -87,7 +86,6 @@ class AXBarChartMultiExample extends Component {
     },
     textColor: 'black',
     form: 'square',
-    position: 'aboveChartRight',
 
   }}
                   rightAxis={{
@@ -153,10 +151,9 @@ class AXBarChartBaseExample extends Component {
     },
     textColor: 'black',
     form: 'square',
-    position: 'aboveChartRight',
 
   }}
-                  rightAxis={{
+                  leftAxis={{
     labelFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
@@ -185,7 +182,8 @@ class AXBarChartBaseExample extends Component {
       [{
         yVals: [10,10,10,10,20],
         label: 'label 1',
-        color: '#ff3b30'
+        color: '#ff3b30',
+        axisDependency: 'left'
       }]
 
 
@@ -214,7 +212,6 @@ class AXBarChartCombineExample extends Component {
     },
     textColor: 'black',
     form: 'square',
-    position: 'aboveChartRight',
 
   }}
                   rightAxis={{
@@ -264,6 +261,7 @@ class AXBarChartCombineExample extends Component {
 }
 
 module.exports = {
+  component:AXBarChartBaseExample,
   title: 'AXBarChartExample',
   description: '柱状图',
   examples: [
