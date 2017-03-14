@@ -18,14 +18,14 @@ var parameterDef = {
 };
 
 var xaxisDef = {
-    drawLabelsEnabled: true,
-    labelFont: {
-        fontSize: 10
-    },
-    drawAxisLineEnabled: true,
-    axisLineColor: 'white',
-    axisLineLength: 20,
-    axisLineWidth: 1,
+    // drawLabelsEnabled: true,
+    // labelFont: {
+    //     fontSize: 10
+    // },
+    // drawAxisLineEnabled: true,
+    // axisLineColor: 'white',
+    // axisLineLength: 20,
+    // axisLineWidth: 1,
     labelCount: 11,
     axisMinimum: 0,
     axisMaximum: 100,
@@ -52,7 +52,7 @@ class AXGaugeChartExample extends Component {
                                 fontSize: 30,
                               },
 
-                              valueTextColor: 'red',
+                              valueTextColor: 'black',
 
                               labelTextColor:'blue',
                               labelFont:{
