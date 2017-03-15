@@ -13,8 +13,13 @@ import ReactNative, {View, Text} from 'react-native';
 const {AXGaugeChart}=require('react-native-apex-charts');
 
 var parameterDef = {
-    edgeInsets: {top: 0, left: 10, right: 20, bottom: 10},
-    highlightPerTapEnabled: true,
+    // edgeInsets: {top: 0, left: 0, right: 0, bottom: 0},
+    holeRadiusPercent:0.58,
+    maxAngle:360,
+    drawHoleEnabled:true,
+    // descriptionText:'服务覆盖率',
+    centerText: '30%',
+    drawCenterTextEnabled: true,
 };
 
 var xaxisDef = {
@@ -41,35 +46,18 @@ class AXGaugeChartExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXGaugeChart style={{flex:1}}
+        return <View style={{height:210,width:200}}>
+            <AXGaugeChart style={{height:120,width:200}}
                           onChartValueSelected={()=>{console.log("==>select")}}
                           parameter={{...parameterDef}}
-                          xAxis={{...xaxisDef}}
+                          // xAxis={{...xaxisDef}}
                           data={{
-                              valueFont: {
-                                fontFamily: 'HelveticaNeue-Light',
-                                fontSize: 30,
-                              },
-
-                              valueTextColor: 'black',
-
-                              labelTextColor:'blue',
-                              labelFont:{
-                                  fontSize:20
-                              },
-
                               dataSet:{
-                                yVal: 40,
-                                color: 'red',
-                                drawValuesEnabled:true,
-                                highlightColor:'blue',
-                                highlightLineWidth:2,
+                                yVals: [40],
+                                colors: ['red'],
+                                currentPercentValue:0.3,
+                                needleColor:'red',
                                 label:'完成率',
-                                valueFormatter:{
-                                    negativeSuffix:'%',
-                                    positiveSuffix:'%',
-                                }
                               }
                            }}
             />
