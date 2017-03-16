@@ -25,19 +25,21 @@ class AXGaugeChartExample extends Component {
 
 
         return <View style={{height:160,width:320}}>
-            <AXGaugeChart style={{flex:1,borderWidth:1,borderColor:'red'}}
-                          onChartValueSelected={()=>{console.log("==>select")}}
-                          parameter={{...parameterDef}}
-                          data={{
-                              dataSet:{
-                                yVals: [40],
-                                colors: ['red'],
-                                currentPercentValue:0.3,
-                                needleColor:'red',
-                                label:'完成率',
-                              }
-                           }}
-            />
+          <AXGaugeChart style={{height:160,width:320}}
+                        parameter={{holeRadiusPercent:0.58,
+                        maxAngle:180,
+                        centerText: '30%',
+                        drawCenterTextEnabled: true,}}
+                        data={{
+                            dataSet:{
+                              yVals: [40],
+                              colors: ['red'],
+                              currentPercentValue:0.3,
+                              needleColor:'red',
+                              label:'完成率',
+                            }
+                         }}
+          />
 
         </View>;
     }
