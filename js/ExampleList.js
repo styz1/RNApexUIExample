@@ -65,7 +65,6 @@ class ExampleList extends Component {
 			<ListItem 
 				title={<ListItemTitle title={title} description={description} />}
 				onPress={handler}
-				style={styles.row}
 				hideSeparator={isLastRow}
 			/>
 		);
@@ -105,11 +104,9 @@ const styles = {
         flex: 1,
     },
     content: {
+    	backgroundColor: 'rgba(255,255,255,.95)',
     	borderColor: '#d9d9d9',
     	borderWidth: StyleSheet.hairlineWidth,
-    },
-    row: {
-    	backgroundColor: 'rgba(255,255,255,.95)',
     },
     title: {
     	fontSize: 17,
