@@ -178,14 +178,14 @@ class AXLineFillChartExample extends Component {
         circleRadius: 3,
         color: '#4cd964',
         circleColor: '#c969e0',
-        drawValuesEnabled: true,
+        drawValuesEnabled: false,
         drawCubicEnabled: false,
         drawHorizontalHighlightIndicatorEnabled: false,
         drawVerticalHighlightIndicatorEnabled: false,
-        drawCirclesEnabled: true,
+        drawCirclesEnabled: false,
         cubicIntensity: 0.2,
         drawFilledEnabled:true,
-        fillColor:'#ffff00ff'
+        fillColor:'red'
       },
       {
         yVals: [8.6,6,7,10,5,6,7,10,0],
@@ -200,7 +200,7 @@ class AXLineFillChartExample extends Component {
         drawVerticalHighlightIndicatorEnabled: false,
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
-        drawFilledEnabled:true,
+        drawFilledEnabled:false,
         fillColor:'#ff0000ff'
       }]
     }
