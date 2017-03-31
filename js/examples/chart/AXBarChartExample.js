@@ -45,7 +45,12 @@ const xaxis = {
 };
 
 const parameter = {
-    highlightPerTapEnabled: true
+    highlightPerTapEnabled: true,
+    defaultHighlight:{
+        x:1,
+        dataSetIndex:0,
+        stackIndex:1,
+    },
 }
 
 class AXBarChartStackExample extends Component {
@@ -215,9 +220,6 @@ class AXBarChartBaseExample extends Component {
       fontSize: 12,
     },
     xVals: ['1998','2001','2003','2006','2008'],
-    selectDataIndex:{
-        x:1
-    },
     dataSets:
       [{
         yVals: [10,10,10,10,20],
@@ -256,11 +258,6 @@ class AXBarChartCombineExample extends Component {
     },
     xVals: ['1998','2001','2003','2006','2008'],
     barWidth:0.3,
-    selectDataIndex:{
-        x:1,
-        dataSetIndex:0,
-        stackIndex:1,
-    },
     dataSets:
       [
         {
