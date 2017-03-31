@@ -267,7 +267,7 @@ class AXBarChartCombineExample extends Component {
           yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
           stackLabels: ['label 1','label2'],
           colors: ['#ff3b30','#33ffff'],
-          highlightColor:'#4ecc4a',
+          highlightColor:'#4ecc4a9f',
         },
         {
         yVals: [10,10,10,10,20],
