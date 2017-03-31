@@ -44,8 +44,8 @@ const xaxis = {
     drawAxisLineEnabled: false,
 };
 
-const parameter={
-    highlightPerTapEnabled:true
+const parameter = {
+    highlightPerTapEnabled: true
 }
 
 class AXBarChartStackExample extends Component {
@@ -215,6 +215,9 @@ class AXBarChartBaseExample extends Component {
       fontSize: 12,
     },
     xVals: ['1998','2001','2003','2006','2008'],
+    selectDataIndex:{
+        x:1
+    },
     dataSets:
       [{
         yVals: [10,10,10,10,20],
@@ -253,6 +256,11 @@ class AXBarChartCombineExample extends Component {
     },
     xVals: ['1998','2001','2003','2006','2008'],
     barWidth:0.3,
+    selectDataIndex:{
+        x:1,
+        dataSetIndex:0,
+        stackIndex:1,
+    },
     dataSets:
       [
         {
@@ -280,7 +288,7 @@ class AXBarChartChangeExample extends Component {
     constructor() {
         super();
         this.state = {
-            yValues:[10,10,10,10,20],
+            yValues: [10, 10, 10, 10, 20],
         };
     }
 

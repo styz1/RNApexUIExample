@@ -78,6 +78,10 @@ class AXLineChartExample extends Component {
       fontSize: 12,
     },
     xVals: ['19981111','20011111','20031111','20061111','20081111','20011111','20031111','20061111','20081111'],
+    selectDataIndex:{
+        x:1,
+        dataSetIndex:1,
+    },
     dataSets:
       [{
         yVals: [4.2,7,6,9,6,10,5,-6,9],
@@ -93,8 +97,6 @@ class AXLineChartExample extends Component {
         circleColor: '#c969e0',
         drawValuesEnabled: true,
         drawCubicEnabled: false,
-        drawHorizontalHighlightIndicatorEnabled: false,
-        drawVerticalHighlightIndicatorEnabled: false,
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
       }]

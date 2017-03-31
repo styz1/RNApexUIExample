@@ -56,6 +56,9 @@ class AXPieChartExample extends Component {
         fontSize: 12,
       },
       valueTextColor: 'black',
+       selectDataIndex:{
+        x:1,
+    },
       dataSet:{
         xVals: ['Java','OC','JS','C++','PHP'],
         yVals: [40,10,23,20,10],
