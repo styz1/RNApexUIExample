@@ -23,6 +23,10 @@ class AXLineChartExample extends Component {
     xAxisDuration: 1,
     yAxisDuration: 2.5,
     easingOption: 'easeInOutQuart',
+     defaultHighlight:{
+        x:1,
+        dataSetIndex:1,
+    },
     //edgeInsets:{bottom:100,left:10,top:10,right:10}
   }}
                                                        legend={{
@@ -78,10 +82,7 @@ class AXLineChartExample extends Component {
       fontSize: 12,
     },
     xVals: ['19981111','20011111','20031111','20061111','20081111','20011111','20031111','20061111','20081111'],
-    selectDataIndex:{
-        x:1,
-        dataSetIndex:1,
-    },
+
     dataSets:
       [{
         yVals: [4.2,7,6,9,6,10,5,-6,9],

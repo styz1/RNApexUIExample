@@ -185,6 +185,7 @@ class AXBarChartBaseExample extends Component {
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
                         parameter={parameter}
+                        onChartValueSelected={(e)=>{console.log("==>",e)}}
                         legend={{
     enabled: true,
     font: {

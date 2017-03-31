@@ -25,6 +25,9 @@ const parameter={
     rotationAngle: 0,
     rotationEnabled: true,
     drawSlicesUnderHoleEnabled: false,
+    defaultHighlight:{
+        x:1,
+    },
 };
 
 const legend={
@@ -56,9 +59,6 @@ class AXPieChartExample extends Component {
         fontSize: 12,
       },
       valueTextColor: 'black',
-       selectDataIndex:{
-        x:1,
-    },
       dataSet:{
         xVals: ['Java','OC','JS','C++','PHP'],
         yVals: [40,10,23,20,10],
