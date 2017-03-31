@@ -44,6 +44,10 @@ const xaxis = {
     drawAxisLineEnabled: false,
 };
 
+const parameter={
+    highlightPerTapEnabled:true
+}
+
 class AXBarChartStackExample extends Component {
 
     render() {
@@ -175,6 +179,7 @@ class AXBarChartBaseExample extends Component {
 
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
+                        parameter={parameter}
                         legend={{
     enabled: true,
     font: {
@@ -215,7 +220,8 @@ class AXBarChartBaseExample extends Component {
         yVals: [10,10,10,10,20],
         label: 'label 1',
         color: '#ff3b30',
-        axisDependency: 'left'
+        axisDependency: 'left',
+        highlightColor:'#cccccc',
       }]
 
 
@@ -236,6 +242,7 @@ class AXBarChartCombineExample extends Component {
 
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
+                        parameter={parameter}
                         legend={legend}
                         rightAxis={yaxis}
                         xAxis={xaxis}
@@ -251,12 +258,14 @@ class AXBarChartCombineExample extends Component {
         {
           yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
           stackLabels: ['label 1','label2'],
-          colors: ['#ff3b30','#33ffff']
+          colors: ['#ff3b30','#33ffff'],
+          highlightColor:'#4ecc4a',
         },
         {
         yVals: [10,10,10,10,20],
         label: 'label 1',
-        color: '#464aff'
+        color: '#464aff',
+        highlightColor:'red',
       }
       ]
     }
