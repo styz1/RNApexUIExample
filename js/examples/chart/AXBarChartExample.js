@@ -53,6 +53,17 @@ const parameter = {
     },
 }
 
+const  marker={
+    type: 'balloon',
+        font: {
+        fontFamily: 'HelveticaNeue-Bold',
+            fontSize: 12,
+    },
+    color: '#ffffff',
+        positiveColor: '#FF0000',
+        negativeColor: '#d2ffcc',
+};
+
 class AXBarChartStackExample extends Component {
 
     render() {
@@ -60,35 +71,11 @@ class AXBarChartStackExample extends Component {
 
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        rightAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-  }}
+                        parameter={parameter}
+                        legend={legend}
+                        rightAxis={yaxis}
+                        xAxis={xaxis}
+                        marker={marker}
                         data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -119,35 +106,11 @@ class AXBarChartMultiExample extends Component {
 
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        rightAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: true,
-    drawAxisLineEnabled: true,
-  }}
+                        parameter={parameter}
+                        legend={legend}
+                        rightAxis={yaxis}
+                        xAxis={xaxis}
+                        marker={marker}
                         data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -186,35 +149,10 @@ class AXBarChartBaseExample extends Component {
             <AXBarChart style={{flex:1}}
                         parameter={parameter}
                         onChartValueSelected={(e)=>{console.log("==>",e)}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        leftAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: true,
-    drawAxisLineEnabled: true,
-  }}
+                        legend={legend}
+                        leftAxis={yaxis}
+                        xAxis={xaxis}
+                        marker={marker}
                         data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -252,6 +190,7 @@ class AXBarChartCombineExample extends Component {
                         legend={legend}
                         rightAxis={yaxis}
                         xAxis={xaxis}
+                        marker={marker}
                         data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -330,7 +269,6 @@ module.exports = {
     title: 'AXBarChartExample',
     description: '柱状图',
     examples: [
-
         {
             title: 'AXBarChart-简单',
             render: () => <AXBarChartBaseExample/>

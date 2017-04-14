@@ -22,7 +22,7 @@ const parameter = {
         dataSetIndex: 1,
     },
     highlightPerTapEnabled: true,
-    //edgeInsets:{bottom:100,left:10,top:10,right:10}
+    edgeInsets:{bottom:0,left:10,top:10,right:10}
 }
 
 const legend = {
@@ -65,7 +65,7 @@ const xAxis = {
     labelPosition: 'bottom',
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
-        fontSize: 12,
+        fontSize: 14,
 
     },
     // labelRotationAngle: 60,
@@ -179,8 +179,8 @@ class AXLineDataChartExample extends Component {
 
     render() {
 
-
-        return <View style={{height:300}}>
+        //backgroundColor:'white'
+        return <View style={{height:300,backgroundColor:'white'}}>
             <AXLineChart style={{flex:1}}
                          parameter={parameter}
                          legend={legend}
@@ -192,7 +192,7 @@ class AXLineDataChartExample extends Component {
               fontFamily: 'HelveticaNeue-Bold',
               fontSize: 12,
             },
-            color: '#46ff40',
+            color: '#ffffff',
             positiveColor: '#FF0000',
             negativeColor: '#d2ffcc',
           }}
@@ -219,13 +219,13 @@ class AXLineDataChartExample extends Component {
         cubicIntensity: 0.2,
       },
       {
-        yVals: [8.6,6,7,10,5,6,7,10,0],
+        yVals: [-8.6,6,7,10,-5,6,7,10,0],
         label: 'label 2',
         lineWidth: 2,
         circleRadius: 3,
         color: '#4cd964',
         circleColor: '#c969e0',
-        drawValuesEnabled: true,
+        drawValuesEnabled: false,
         drawCubicEnabled: false,
         drawHorizontalHighlightIndicatorEnabled: true,
         drawVerticalHighlightIndicatorEnabled: true,
@@ -244,6 +244,10 @@ module.exports = {
     description: '线性图',
     examples: [
         {
+            title: 'AXLineChart-数据弹窗',
+            render: () => <AXLineDataChartExample />
+        },
+        {
             title: 'AXLineChart--基本',
             render: () => <AXLineChartExample />
         },
@@ -251,9 +255,6 @@ module.exports = {
             title: 'AXLineChart-填充',
             render: () => <AXLineFillChartExample />
         },
-        {
-            title: 'AXLineChart-数据弹窗',
-            render: () => <AXLineDataChartExample />
-        }
+
     ]
 }

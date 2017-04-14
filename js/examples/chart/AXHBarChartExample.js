@@ -42,6 +42,7 @@ const xaxis = {
     enabled: true,
     drawGridLinesEnabled: false,
     drawAxisLineEnabled: false,
+
 };
 
 const parameter = {
