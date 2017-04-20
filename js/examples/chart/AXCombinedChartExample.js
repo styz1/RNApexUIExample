@@ -20,9 +20,11 @@ const parameter = {
     defaultHighlight: {
         x: 1,
         dataSetIndex: 0,
+        stackIndex: 0,
+        chartType: 'bar',
     },
     highlightPerTapEnabled: true,
-    //edgeInsets:{bottom:100,left:10,top:10,right:10}
+    highlightFullBarEnabled: true,
 }
 
 const legend = {
@@ -47,7 +49,7 @@ const rightAxis = {
     drawZeroLineEnabled: true,
     forceLabelsEnabled: true,
     drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
+    drawAxisLineEnabled: true,
     customAxisMax: 20,
     customAxisMin: 0,
     valueFormatter: {
@@ -104,8 +106,9 @@ const barData_simple = {
     }]
 };
 
-
+const xVals = ['19981111','20011111','20031111','20061111','20081111'];
 const barData_stack = {
+    barWidth: 0.8,
     dataSets: [
         {
             yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
@@ -116,7 +119,7 @@ const barData_stack = {
 };
 
 const barData_combined = {
-    barWidth: 0.3,
+    barWidth: 0.8,
     dataSets: [
         {
             yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
@@ -152,24 +155,24 @@ const barData_paralleling = {
 class AXCombinedChartExample extends Component {
 
     render() {
+        return <View style={{height:300}}>
+          <AXCombinedChart style={{flex:1}}
+           onChartValueSelected={(e)=>{console.log("==>x",e)}}
+           parameter={parameter}
+           legend={legend}
+           leftAxis={rightAxis}
+           xAxis={xAxis}
+           data={{
+            valueFont: {
+              fontFamily: 'HelveticaNeue-Light',
+              fontSize: 12,
+            },
+            xVals: xVals,
 
-
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={xAxis}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
-
-    lineData:lineData,
-    barData:barData_simple
-  }}/></View>;
+            lineData:lineData,
+            barData:barData_simple
+          }}/>
+        </View>;
     }
 }
 
@@ -189,7 +192,7 @@ class AXCombinedChartExample2 extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
+    xVals: xVals,
 
     lineData:lineData,
     barData:barData_stack
@@ -213,7 +216,7 @@ class AXCombinedChartExample3 extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
+    xVals: xVals,
 
     lineData:lineData,
     barData:barData_paralleling
@@ -237,7 +240,7 @@ class AXCombinedChartExample4 extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
+    xVals: xVals,
 
     lineData:lineData,
     barData:barData_combined
@@ -264,7 +267,7 @@ class AXCombinedChartExample5 extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
+    xVals: xVals,
 
     lineData:lineData,
   }}/></View>;
@@ -287,7 +290,7 @@ class AXCombinedChartExample6 extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111'],
+    xVals: xVals,
 
     barData:barData_combined
   }}/></View>;
