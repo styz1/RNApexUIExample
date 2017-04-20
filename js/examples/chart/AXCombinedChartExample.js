@@ -14,8 +14,8 @@ const {AXCombinedChart}=require('react-native-apex-charts');
 
 
 const parameter = {
-    xAxisDuration: 1,
-    yAxisDuration: 2.5,
+    // xAxisDuration: 1,
+    // yAxisDuration: 2.5,
     easingOption: 'easeInOutQuart',
     defaultHighlight: {
         x: 1,
@@ -25,6 +25,7 @@ const parameter = {
     },
     highlightPerTapEnabled: true,
     highlightFullBarEnabled: true,
+    highlightAllBarEnabled:true,
 }
 
 const legend = {
@@ -101,8 +102,9 @@ const barData_simple = {
         yVals: [10, 10, 10, 10, 20],
         label: 'bar1',
         color: '#ff3b30',
-        axisDependency: 'left',
+        axisDependency: 'right',
         highlightColor: '#cccccc',
+
     }]
 };
 
@@ -126,12 +128,14 @@ const barData_combined = {
             stackLabels: ['stack1', 'stack2'],
             colors: ['#ff3b30', '#33ffff'],
             highlightColor: '#4ecc4a9f',
+            axisDependency: 'right',
         },
         {
             yVals: [10, 10, 10, 10, 20],
             label: 'bar1',
             color: '#464aff',
             highlightColor: 'red',
+            axisDependency: 'right',
         }
     ]
 }
@@ -151,8 +155,18 @@ const barData_paralleling = {
     ]
 };
 
+const marker={
+    type: 'balloon',
+    font: {
+        fontFamily: 'HelveticaNeue-Bold',
+        fontSize: 12,
+    },
+    color: '#ffffff',
+    positiveColor: '#FF0000',
+    negativeColor: '#d2ffcc',
+};
 
-class AXCombinedChartExample extends Component {
+class AXCombinedChartExample1 extends Component {
 
     render() {
         return <View style={{height:300}}>
@@ -187,6 +201,7 @@ class AXCombinedChartExample2 extends Component {
                                                            legend={legend}
                                                            rightAxis={rightAxis}
                                                            xAxis={xAxis}
+                                                           marker={marker}
                                                            data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -211,6 +226,7 @@ class AXCombinedChartExample3 extends Component {
                                                            legend={legend}
                                                            rightAxis={rightAxis}
                                                            xAxis={xAxis}
+                                                           marker={marker}
                                                            data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -235,6 +251,7 @@ class AXCombinedChartExample4 extends Component {
                                                            legend={legend}
                                                            rightAxis={rightAxis}
                                                            xAxis={xAxis}
+                                                           marker={marker}
                                                            data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -262,6 +279,7 @@ class AXCombinedChartExample5 extends Component {
                                                            xAxis={{...xAxis,
                                                                 forceLabelsEnabled:true,
                                                                 labelCount:5,}}
+                                                           marker={marker}
                                                            data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -285,6 +303,7 @@ class AXCombinedChartExample6 extends Component {
                                                            legend={legend}
                                                            rightAxis={rightAxis}
                                                            xAxis={xAxis}
+                                                           marker={marker}
                                                            data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -312,7 +331,7 @@ module
         },
         {
             title: '基本',
-            render: () => <AXCombinedChartExample />
+            render: () => <AXCombinedChartExample1 />
         },
         {
             title: '堆',

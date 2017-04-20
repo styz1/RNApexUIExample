@@ -46,22 +46,24 @@ const xaxis = {
 
 const parameter = {
     highlightPerTapEnabled: true,
-    defaultHighlight:{
-        x:1,
-        dataSetIndex:0,
-        stackIndex:1,
+    highlightAllBarEnabled: true,
+    highlightFullBarEnabled: true,
+    defaultHighlight: {
+        x: 1,
+        dataSetIndex: 0,
+        stackIndex: 1,
     },
 }
 
-const  marker={
+const marker = {
     type: 'balloon',
-        font: {
+    font: {
         fontFamily: 'HelveticaNeue-Bold',
-            fontSize: 12,
+        fontSize: 12,
     },
     color: '#ffffff',
-        positiveColor: '#FF0000',
-        negativeColor: '#d2ffcc',
+    positiveColor: '#FF0000',
+    negativeColor: '#d2ffcc',
 };
 
 class AXBarChartStackExample extends Component {
