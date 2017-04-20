@@ -28,6 +28,9 @@ const parameter={
     defaultHighlight:{
         x:1,
     },
+    xAxisDuration: 1,
+    yAxisDuration: 2.5,
+    easingOption: 'easeInOutQuart',
 };
 
 const legend={
@@ -135,9 +138,9 @@ module.exports = {
             title: 'AXPieChart',
             render: () => <AXPieChartExample />
         },
-        {
-            title: 'AXPieChart-change',
-            render: () => <AXPieChartChangeExample />
-        }
+        // {
+        //     title: 'AXPieChart-change',
+        //     render: () => <AXPieChartChangeExample />
+        // }
     ]
 }

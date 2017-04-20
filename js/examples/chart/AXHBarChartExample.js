@@ -47,12 +47,25 @@ const xaxis = {
 
 const parameter = {
     highlightPerTapEnabled: true,
-    defaultHighlight:{
-        x:1,
-        dataSetIndex:0,
-        stackIndex:1,
+    defaultHighlight: {
+        x: 1,
+        dataSetIndex: 0,
+        stackIndex: 1,
     },
+    highlightAllBarEnabled:true,
+    highlightFullBarEnabled:true,
 }
+
+const marker = {
+    type: 'balloon',
+    font: {
+        fontFamily: 'HelveticaNeue-Bold',
+        fontSize: 12,
+    },
+    color: '#ffffff',
+    positiveColor: '#FF0000',
+    negativeColor: '#d2ffcc',
+};
 
 class AXBarChartStackExample extends Component {
 
@@ -61,36 +74,12 @@ class AXBarChartStackExample extends Component {
 
         return <View style={{height:300}}>
             <AXHorizontalBarChart style={{flex:1}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        rightAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-  }}
-                        data={{
+                                  parameter={parameter}
+                                  legend={legend}
+                                  rightAxis={yaxis}
+                                  xAxis={xaxis}
+                                  marker={marker}
+                                  data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
@@ -120,36 +109,12 @@ class AXBarChartMultiExample extends Component {
 
         return <View style={{height:300}}>
             <AXHorizontalBarChart style={{flex:1}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        rightAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: true,
-    drawAxisLineEnabled: true,
-  }}
-                        data={{
+                                  parameter={parameter}
+                                  legend={legend}
+                                  rightAxis={yaxis}
+                                  xAxis={xaxis}
+                                  marker={marker}
+                                  data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
@@ -157,7 +122,7 @@ class AXBarChartMultiExample extends Component {
     xVals: ['1998','2001','2003','2006','2008'],
     dataSets:
       [{
-        yVals: [10,10,10,10,20],
+        yVals: [1,10,10,10,20],
         label: 'label 1',
         color: '#ff3b30'
       },
@@ -185,38 +150,13 @@ class AXBarChartBaseExample extends Component {
 
         return <View style={{height:300}}>
             <AXHorizontalBarChart style={{flex:1}}
-                        parameter={parameter}
-                        onChartValueSelected={(e)=>{console.log("==>",e)}}
-                        legend={{
-    enabled: true,
-    font: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    textColor: 'black',
-    form: 'square',
-
-  }}
-                        leftAxis={{
-    labelFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    labelPosition:'outside',
-    labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin:0
-  }}
-                        xAxis={{
-    labelPosition:'bottom',
-    enabled: true,
-    drawGridLinesEnabled: true,
-    drawAxisLineEnabled: true,
-  }}
-                        data={{
+                                  parameter={parameter}
+                                  onChartValueSelected={(e)=>{console.log("==>",e)}}
+                                  legend={legend}
+                                  rightAxis={yaxis}
+                                  xAxis={xaxis}
+                                  marker={marker}
+                                  data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
@@ -249,11 +189,12 @@ class AXBarChartCombineExample extends Component {
 
         return <View style={{height:300}}>
             <AXHorizontalBarChart style={{flex:1}}
-                        parameter={parameter}
-                        legend={legend}
-                        rightAxis={yaxis}
-                        xAxis={xaxis}
-                        data={{
+                                  parameter={parameter}
+                                  legend={legend}
+                                  rightAxis={yaxis}
+                                  xAxis={xaxis}
+                                  marker={marker}
+                                  data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
@@ -301,10 +242,11 @@ class AXBarChartChangeExample extends Component {
                 onPress={()=>{this.setState({yValues:[4,1,23,20,10]})}}
             />
             <AXHorizontalBarChart style={{flex:1}}
-                        legend={legend}
-                        rightAxis={yaxis}
-                        xAxis={xaxis}
-                        data={{
+                                  legend={legend}
+                                  rightAxis={yaxis}
+                                  xAxis={xaxis}
+                                  marker={marker}
+                                  data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
