@@ -43,7 +43,7 @@ const rightAxis = {
     },
     labelPosition: 'outside',
     labelTextColor: 'black',
-    labelCount: 5,
+    labelCount: 6,
     drawZeroLineEnabled: true,
     forceLabelsEnabled: true,
     drawGridLinesEnabled: false,
@@ -77,6 +77,19 @@ const xAxis = {
     drawAxisLineEnabled: true,
 };
 
+const marker={
+    type: 'balloon',
+        // font: {
+        // fontFamily: 'HelveticaNeue-Bold',
+        //     fontSize: 12,
+    // },
+    color: '#FFffffAA',
+        xAxisLabelEnabled: true,
+        labelEnabled: true,
+        drawAllTipsEnabled: true,
+    // positiveColor:'gray',
+    // negativeColor:'blue',
+}
 
 class AXLineChartExample extends Component {
 
@@ -89,6 +102,7 @@ class AXLineChartExample extends Component {
                                                        legend={legend}
                                                        rightAxis={rightAxis}
                                                        xAxis={xAxis}
+                                                       marker={marker}
                                                        data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -129,6 +143,7 @@ class AXLineFillChartExample extends Component {
                                                        legend={legend}
                                                        rightAxis={rightAxis}
                                                        xAxis={xAxis}
+                                                       marker={marker}
                                                        data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
@@ -186,22 +201,13 @@ class AXLineDataChartExample extends Component {
                          legend={legend}
                          rightAxis={rightAxis}
                          xAxis={xAxis}
-                         marker={{
-            type: 'balloon',
-            font: {
-              fontFamily: 'HelveticaNeue-Bold',
-              fontSize: 12,
-            },
-            color: '#ffffff',
-            positiveColor: '#FF0000',
-            negativeColor: '#d2ffcc',
-          }}
+                         marker={marker}
                          data={{
     valueFont: {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111','20011111','20031111','20061111','20081111'],
+    xVals: ['19981111','20011111','20021111','20031111','20041111','20051111','20061111','20071111','20081111'],
     dataSets:
       [
       {

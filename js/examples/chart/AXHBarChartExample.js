@@ -56,16 +56,18 @@ const parameter = {
     highlightFullBarEnabled:true,
 }
 
-const marker = {
+
+const marker={
     type: 'balloon',
     font: {
         fontFamily: 'HelveticaNeue-Bold',
         fontSize: 12,
     },
-    color: '#ffffff',
-    positiveColor: '#FF0000',
-    negativeColor: '#d2ffcc',
-};
+    color: '#FF000033',
+    xAxisLabelEnabled: true,
+    labelEnabled: true,
+    drawAllTipsEnabled: false,
+}
 
 class AXBarChartStackExample extends Component {
 

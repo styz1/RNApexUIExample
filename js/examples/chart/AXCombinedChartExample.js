@@ -25,7 +25,7 @@ const parameter = {
     },
     highlightPerTapEnabled: true,
     highlightFullBarEnabled: true,
-    highlightAllBarEnabled:true,
+    highlightAllBarEnabled: true,
 }
 
 const legend = {
@@ -108,7 +108,7 @@ const barData_simple = {
     }]
 };
 
-const xVals = ['19981111','20011111','20031111','20061111','20081111'];
+const xVals = ['19981111', '20011111', '20031111', '20061111', '20081111'];
 const barData_stack = {
     barWidth: 0.8,
     dataSets: [
@@ -161,22 +161,24 @@ const marker={
         fontFamily: 'HelveticaNeue-Bold',
         fontSize: 12,
     },
-    color: '#ffffff',
-    positiveColor: '#FF0000',
-    negativeColor: '#d2ffcc',
-};
+    color: '#ffffffAA',
+    xAxisLabelEnabled: true,
+    labelEnabled: true,
+    drawAllTipsEnabled: true,
+}
 
 class AXCombinedChartExample1 extends Component {
 
     render() {
         return <View style={{height:300}}>
-          <AXCombinedChart style={{flex:1}}
-           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-           parameter={parameter}
-           legend={legend}
-           leftAxis={rightAxis}
-           xAxis={xAxis}
-           data={{
+            <AXCombinedChart style={{flex:1}}
+                             onChartValueSelected={(e)=>{console.log("==>x",e)}}
+                             parameter={parameter}
+                             legend={legend}
+                             leftAxis={rightAxis}
+                             xAxis={xAxis}
+                             marker={marker}
+                             data={{
             valueFont: {
               fontFamily: 'HelveticaNeue-Light',
               fontSize: 12,

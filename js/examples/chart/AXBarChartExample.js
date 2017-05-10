@@ -42,29 +42,33 @@ const xaxis = {
     enabled: true,
     drawGridLinesEnabled: false,
     drawAxisLineEnabled: false,
+    labelCount:1,
 };
 
 const parameter = {
+    xAxisDuration: 1,
+    yAxisDuration: 2.5,
+    easingOption: 'easeInOutQuart',
     highlightPerTapEnabled: true,
     highlightAllBarEnabled: true,
-    highlightFullBarEnabled: true,
+    highlightFullBarEnabled: false,
     defaultHighlight: {
         x: 1,
         dataSetIndex: 0,
         stackIndex: 1,
     },
 }
-
-const marker = {
+//type: 'rectangle',
+const marker={
     type: 'balloon',
     font: {
-        fontFamily: 'HelveticaNeue-Bold',
         fontSize: 12,
     },
-    color: '#ffffff',
-    positiveColor: '#FF0000',
-    negativeColor: '#d2ffcc',
-};
+    // color: '#FF000066',
+    xAxisLabelEnabled: true,
+    labelEnabled: false,
+    drawAllTipsEnabled: false,
+}
 
 class AXBarChartStackExample extends Component {
 
@@ -160,10 +164,10 @@ class AXBarChartBaseExample extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['1998','2001','2003','2006','2008'],
+    xVals: ['1998'],
     dataSets:
       [{
-        yVals: [10,10,10,10,20],
+        yVals: [10],
         label: 'label 1',
         color: '#ff3b30',
         axisDependency: 'left',
@@ -188,7 +192,7 @@ class AXBarChartCombineExample extends Component {
 
         return <View style={{height:300}}>
             <AXBarChart style={{flex:1}}
-                        parameter={parameter}
+                        parameter={{...parameter,highlightAllBarEnabled:true}}
                         legend={legend}
                         rightAxis={yaxis}
                         xAxis={xaxis}
@@ -204,13 +208,13 @@ class AXBarChartCombineExample extends Component {
       [
         {
           yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
-          stackLabels: ['label 1','label2'],
+          stackLabels: ['label1','label2'],
           colors: ['#ff3b30','#33ffff'],
           highlightColor:'#4ecc4a9f',
         },
         {
         yVals: [10,10,10,10,20],
-        label: 'label 1',
+        label: 'label1',
         color: '#464aff',
         highlightColor:'red',
       }
@@ -241,6 +245,7 @@ class AXBarChartChangeExample extends Component {
                 onPress={()=>{this.setState({yValues:[4,1,23,20,10]})}}
             />
             <AXBarChart style={{flex:1}}
+                        parameter={parameter}
                         legend={legend}
                         rightAxis={yaxis}
                         xAxis={xaxis}
