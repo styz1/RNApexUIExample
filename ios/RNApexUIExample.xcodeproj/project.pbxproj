@@ -39,7 +39,6 @@
 		5138446E1EA7466E007F6E1C /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		5138446F1EA7466E007F6E1C /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		513844701EA7466E007F6E1C /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
-		513844711EA7466E007F6E1C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5138443C1EA743C7007F6E1C /* Charts.framework */; };
 		513844721EA7466E007F6E1C /* libRNCharts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D46F95410F496EBA76FF57 /* libRNCharts.a */; };
 		513844731EA7466E007F6E1C /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F08A64B0006D49CAB324D0DE /* libRNVectorIcons.a */; };
 		513844751EA7466E007F6E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -54,7 +53,6 @@
 		5138447E1EA7466E007F6E1C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9615077A02D400FA31015E1 /* Octicons.ttf */; };
 		5138447F1EA7466E007F6E1C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CE8ED7B6B8E44F08E165999 /* SimpleLineIcons.ttf */; };
 		513844801EA7466E007F6E1C /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 602A8EB513624E2AB3A5A8B6 /* Zocial.ttf */; };
-		513844831EA7466E007F6E1C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5138443C1EA743C7007F6E1C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		513844891EA74682007F6E1C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB74631E6653B2009C7275 /* Charts.framework */; };
 		5138448A1EA74682007F6E1C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB74631E6653B2009C7275 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -224,27 +222,6 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
-		5138443B1EA743C7007F6E1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513844351EA743C7007F6E1C /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F241D8110E600722320;
-			remoteInfo = Charts;
-		};
-		5138443D1EA743C7007F6E1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513844351EA743C7007F6E1C /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06165F2E1D8110E600722320;
-			remoteInfo = ChartsTests;
-		};
-		513844611EA7466E007F6E1C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 513844351EA743C7007F6E1C /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 06165F231D8110E600722320;
-			remoteInfo = Charts;
-		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -296,7 +273,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				513844831EA7466E007F6E1C /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +314,8 @@
 		29B4B2B165204FE38C28203D /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		375B362795AD46BF82FA5D50 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		4CE8ED7B6B8E44F08E165999 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		513844351EA743C7007F6E1C /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../MyStock/submodule/ios-charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		513844871EA7466E007F6E1C /* RNApexUIExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNApexUIExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D52E841EC985420087A797 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53A2DC1422FC4A76BF0FDBB0 /* RNCharts.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCharts.xcodeproj; path = "../node_modules/react-native-apex-charts/ios/RNCharts.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		602A8EB513624E2AB3A5A8B6 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -401,7 +377,6 @@
 				5138446E1EA7466E007F6E1C /* libRCTText.a in Frameworks */,
 				5138446F1EA7466E007F6E1C /* libRCTVibration.a in Frameworks */,
 				513844701EA7466E007F6E1C /* libRCTWebSocket.a in Frameworks */,
-				513844711EA7466E007F6E1C /* Charts.framework in Frameworks */,
 				513844721EA7466E007F6E1C /* libRNCharts.a in Frameworks */,
 				513844731EA7466E007F6E1C /* libRNVectorIcons.a in Frameworks */,
 			);
@@ -516,13 +491,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		513844361EA743C7007F6E1C /* Products */ = {
+		51D52E831EC985420087A797 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5138443C1EA743C7007F6E1C /* Charts.framework */,
-				5138443E1EA743C7007F6E1C /* ChartsTests.xctest */,
+				51D52E841EC985420087A797 /* Foundation.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -575,7 +549,6 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				C3F49AB7AA174D1FA830C5EB /* RNVectorIcons.xcodeproj */,
 				53A2DC1422FC4A76BF0FDBB0 /* RNCharts.xcodeproj */,
-				513844351EA743C7007F6E1C /* Charts.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -598,6 +571,7 @@
 				00E356EF1AD99517003FC87E /* RNApexUIExampleTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				A8934A5E07184EDAAE5C4F0E /* Resources */,
+				51D52E831EC985420087A797 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -683,7 +657,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				513844601EA7466E007F6E1C /* PBXTargetDependency */,
 			);
 			name = RNApexUIExampleDebug;
 			productName = "Hello World";
@@ -703,6 +676,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = AB8WYC3GWG;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RNApexUIExample" */;
@@ -717,10 +693,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 513844361EA743C7007F6E1C /* Products */;
-					ProjectRef = 513844351EA743C7007F6E1C /* Charts.xcodeproj */;
-				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -931,20 +903,6 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5138443C1EA743C7007F6E1C /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 5138443B1EA743C7007F6E1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5138443E1EA743C7007F6E1C /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = 5138443D1EA743C7007F6E1C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1103,11 +1061,6 @@
 			target = 13B07F861A680F5B00A75B9A /* RNApexUIExample */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
-		513844601EA7466E007F6E1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = 513844611EA7466E007F6E1C /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1165,9 +1118,11 @@
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = AB8WYC3GWG;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../node_modules/react-native-apex-charts/ios";
 				INFOPLIST_FILE = RNApexUIExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1184,8 +1139,10 @@
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AB8WYC3GWG;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../node_modules/react-native-apex-charts/ios";
 				INFOPLIST_FILE = RNApexUIExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

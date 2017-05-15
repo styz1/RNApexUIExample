@@ -74,6 +74,7 @@ class AXPieChartExample extends Component {
         valueLinePart2Length: 0.5,
         valueLineVariableLength: true,
         minmumPercentValue: 1,
+        holeRadiusPercent: 0.4,
         colors:['red','green','blue','gray','black'],
       }
     }}/>
@@ -121,9 +122,94 @@ class AXPieChartChangeExample extends Component {
         valueLinePart2Length: 0.5,
         valueLineVariableLength: true,
         minmumPercentValue: 1,
+        selectionShift: 10,
         colors:['red','green','blue','gray','black'],
       }
     }}/>
+
+        </View>;
+    }
+}
+
+class AXXPieChartExample extends Component {
+
+    render() {
+        return <View style={{height:300}}>
+          <AXPieChart style={{flex:1}}
+                      parameter={{
+                          drawSliceTextEnabled: true,
+                          drawValuesEnabled: true,
+                          usePercentValuesEnabled: true,
+                          highlightPerTapEnabled: true,
+                          drawCenterTextEnabled: false,
+                          rotationAngle: 0,
+                          rotationEnabled: true,
+                          drawSlicesUnderHoleEnabled: false,
+                          xAxisDuration: 1,
+                          yAxisDuration: 2.5,
+                          easingOption: 'easeInOutQuart',
+                          xPieSpace: 5,
+                          drawHoleEnabled:true,
+                      }}
+                      marker={{
+                        type: 'balloon',
+                        font: {
+                          fontFamily: 'HelveticaNeue-Bold',
+                          fontSize: 12,
+                        },
+                        color: '#FFFFFFE0',
+                        xAxisLabelEnabled: true,
+                        labelEnabled: true,
+                        drawAllTipsEnabled: false,
+                      }}
+                      legend={{
+                          enabled: true,
+                          font: {
+                              fontFamily: 'HelveticaNeue-Light',
+                              fontSize: 12,
+                          },
+                          textColor: 'black',
+                          drawInside: false,
+                          horizontalAlignment:'center',
+                          verticalAlignment: 'bottom',
+                          orientation: 'horizontal',
+                          form: 'square',
+                          xEntrySpace:5,
+                          yOffset:5,
+                      }}
+                      data={{
+                      valueFont: {
+                        fontFamily: 'HelveticaNeue-Light',
+                        fontSize: 12,
+                      },
+                      valueTextColor: 'black',
+                      dataSets:[{
+                        xVals: ['Java','OC','JS','C++','PHP'],
+                        yVals: [40,10,20,20,10],
+                        yValuePosition:'outside',
+                        xValuePosition:'outside',
+                        sliceSpace: 2,
+                        valueLineColor: 'red',
+                        valueLinePart1OffsetPercentage: 1,
+                        valueLinePart1Length: 0.5,
+                        valueLinePart2Length: 0.5,
+                        valueLineVariableLength: true,
+                        minmumPercentValue: 1,
+                        drawValuesEnabled: true,
+                        holeRadiusPercent:0.7,
+                        colors:['red','green','blue','gray','black'],
+                      },{
+                        xVals: ['Java','OC'],
+                        yVals: [30,30],
+                        yValuePosition:'inside',
+                        xValuePosition:'inside',
+                        drawValuesEnabled:false,
+                        sliceSpace: 2,
+                        selectionShift: 4,
+                        minmumPercentValue: 1,
+                        colors:['green','blue'],
+                      }]
+                    }}/>
 
         </View>;
     }
@@ -138,9 +224,9 @@ module.exports = {
             title: 'AXPieChart',
             render: () => <AXPieChartExample />
         },
-        // {
-        //     title: 'AXPieChart-change',
-        //     render: () => <AXPieChartChangeExample />
-        // }
+        {
+            title: 'AXXPieChart',
+            render: () => <AXXPieChartExample />
+        }
     ]
 }
