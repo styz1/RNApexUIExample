@@ -15,7 +15,6 @@ const {AXPieChart}=require('react-native-apex-charts');
 
 const parameter={
     drawSliceTextEnabled: true,
-    drawValuesEnabled: true,
     usePercentValuesEnabled: true,
     holeRadiusPercent: 0.4,
     highlightPerTapEnabled: true,
@@ -73,6 +72,7 @@ class AXPieChartExample extends Component {
         valueLinePart1Length: 0.5,
         valueLinePart2Length: 0.5,
         valueLineVariableLength: true,
+        drawEntryLabelsEnabled:true,
         minmumPercentValue: 1,
         holeRadiusPercent: 0.4,
         colors:['red','green','blue','gray','black'],
@@ -137,8 +137,6 @@ class AXXPieChartExample extends Component {
         return <View style={{height:300}}>
           <AXPieChart style={{flex:1}}
                       parameter={{
-                          drawSliceTextEnabled: true,
-                          drawValuesEnabled: true,
                           usePercentValuesEnabled: true,
                           highlightPerTapEnabled: true,
                           drawCenterTextEnabled: false,
@@ -149,7 +147,6 @@ class AXXPieChartExample extends Component {
                           yAxisDuration: 2.5,
                           easingOption: 'easeInOutQuart',
                           xPieSpace: 5,
-                          drawHoleEnabled:true,
                       }}
                       marker={{
                         type: 'balloon',
@@ -182,31 +179,33 @@ class AXXPieChartExample extends Component {
                         fontFamily: 'HelveticaNeue-Light',
                         fontSize: 12,
                       },
-                      valueTextColor: 'black',
+                      // valueTextColor: 'black',
                       dataSets:[{
                         xVals: ['Java','OC','JS','C++','PHP'],
                         yVals: [40,10,20,20,10],
                         yValuePosition:'outside',
                         xValuePosition:'outside',
                         sliceSpace: 2,
-                        valueLineColor: 'red',
+                        // valueLineColor: 'red',
                         valueLinePart1OffsetPercentage: 1,
                         valueLinePart1Length: 0.5,
                         valueLinePart2Length: 0.5,
                         valueLineVariableLength: true,
                         minmumPercentValue: 1,
                         drawValuesEnabled: true,
+                        drawEntryLabelsEnabled:true,
+                        valueTextColor: 'black',
+                        // entryLabelColor: ColorPropType,
                         holeRadiusPercent:0.7,
                         colors:['red','green','blue','gray','black'],
                       },{
                         xVals: ['Java','OC'],
                         yVals: [30,30],
-                        yValuePosition:'inside',
-                        xValuePosition:'inside',
-                        drawValuesEnabled:false,
                         sliceSpace: 2,
                         selectionShift: 4,
                         minmumPercentValue: 1,
+                        drawEntryLabelsEnabled:true,
+                        drawValuesEnabled: false,
                         colors:['green','blue'],
                       }]
                     }}/>
@@ -220,10 +219,10 @@ module.exports = {
     title: 'AXPieChartExample',
     description: '饼图',
     examples: [
-        {
-            title: 'AXPieChart',
-            render: () => <AXPieChartExample />
-        },
+        // {
+        //     title: 'AXPieChart',
+        //     render: () => <AXPieChartExample />
+        // },
         {
             title: 'AXXPieChart',
             render: () => <AXXPieChartExample />
