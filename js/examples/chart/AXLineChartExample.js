@@ -127,6 +127,11 @@ class AXLineChartExample extends Component {
         drawCubicEnabled: false,
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
+        selectXIndexes: [1,3],
+        selectXStyle: {
+            circleRadius: 5,
+            circleColor: 'red',
+        },
       }]
     }
   }/></View>;

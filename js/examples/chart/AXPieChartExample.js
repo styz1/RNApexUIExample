@@ -65,7 +65,7 @@ class AXPieChartExample extends Component {
         xVals: ['Java','OC','JS','C++','PHP'],
         yVals: [40,10,23,20,10],
         yValuePosition:'outside',
-        xValuePosition:'inside',
+        xValuePosition:'outside',
         sliceSpace: 2,
         valueLineColor: 'red',
         valueLinePart1OffsetPercentage: 1,
@@ -73,6 +73,7 @@ class AXPieChartExample extends Component {
         valueLinePart2Length: 0.5,
         valueLineVariableLength: true,
         drawEntryLabelsEnabled:true,
+        drawValuesEnabled: true,
         minmumPercentValue: 1,
         holeRadiusPercent: 0.4,
         colors:['red','green','blue','gray','black'],
@@ -195,7 +196,6 @@ class AXXPieChartExample extends Component {
                         drawValuesEnabled: true,
                         drawEntryLabelsEnabled:true,
                         valueTextColor: 'black',
-                        // entryLabelColor: ColorPropType,
                         holeRadiusPercent:0.7,
                         colors:['red','green','blue','gray','black'],
                       },{
@@ -205,7 +205,9 @@ class AXXPieChartExample extends Component {
                         selectionShift: 4,
                         minmumPercentValue: 1,
                         drawEntryLabelsEnabled:true,
-                        drawValuesEnabled: false,
+                        drawValuesEnabled: true,
+                        entryLabelColor:'black',
+                        valueTextColor:'black',
                         colors:['green','blue'],
                       }]
                     }}/>
@@ -219,10 +221,10 @@ module.exports = {
     title: 'AXPieChartExample',
     description: '饼图',
     examples: [
-        // {
-        //     title: 'AXPieChart',
-        //     render: () => <AXPieChartExample />
-        // },
+        {
+            title: 'AXPieChart',
+            render: () => <AXPieChartExample />
+        },
         {
             title: 'AXXPieChart',
             render: () => <AXXPieChartExample />
