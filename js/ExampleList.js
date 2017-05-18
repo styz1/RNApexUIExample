@@ -6,6 +6,7 @@ import {List} from 'react-native-apex-ui';
 const ListItem = List.ListItem;
 
 const Examples = [
+
     require('./examples/chart/AXScatterChartExample'),
     require('./examples/chart/AXGaugeChartExample'),
     require('./examples/chart/AXCombinedChartExample'),
@@ -13,6 +14,9 @@ const Examples = [
     require('./examples/chart/AXHBarChartExample'),
     require('./examples/chart/AXBarChartExample'),
     require('./examples/chart/AXPieChartExample'),
+
+    require('./examples/TimelineExample'),
+	require('./examples/CollapseExample'),
     require('./examples/ActionSheetExample'),
     require('./examples/TooltipExample'),
     require('./examples/ToptipExample'),
@@ -36,7 +40,6 @@ const Examples = [
     require('./examples/ViewPagerExample'),
     require('./examples/CarouselExample'),
 
-
 ];
 
 const dataSource = new ListView.DataSource({
@@ -45,49 +48,49 @@ const dataSource = new ListView.DataSource({
 }).cloneWithRows(Examples);
 
 class ExampleList extends Component {
-    static title = 'ReactNativeApexUI';
 
-    static contextTypes = {
-        uiTheme: PropTypes.object.isRequired,
-    };
+	static title = 'ReactNativeApexUI';
 
-    _handleRowPress = (module) => {
-        this.props.navigator.push({module});
-    }
+	static contextTypes = {
+		uiTheme: PropTypes.object.isRequired,
+	};
 
-    _renderExampleRow = (module: Object, sectionID, rowID) => {
-        return this._renderRow(
-            module.title,
-            module.description,
-            () => this._handleRowPress(module),
-            rowID,
-        );
-    }
+	_handleRowPress = (module) => {
+		this.props.navigator.push({module});
+	}
 
-    _renderRow = (title, description, handler, rowID) => {
-        let isLastRow = rowID == (dataSource.getRowCount() - 1);
-        return (
-            <ListItem
-                title={<ListItemTitle title={title} description={description} />}
-                onPress={handler}
-                style={styles.row}
-                hideSeparator={isLastRow}
-            />
-        );
-    }
+	_renderExampleRow = (module: Object, sectionID, rowID) => {
+		return this._renderRow(
+			module.title,
+			module.description,
+			() => this._handleRowPress(module),
+			rowID,
+		);
+	}
 
-    render() {
-        return (
-            <ListView
-                style={styles.list}
-                contentContainerStyle={styles.content}
-                contentOffset={{y: -20}}
-                contentInset={{top: 20, bottom: 60}}
-                dataSource={dataSource}
-                renderRow={this._renderExampleRow}
-            />
-        );
-    }
+	_renderRow = (title, description, handler, rowID) => {
+		let isLastRow = rowID == (dataSource.getRowCount() - 1);
+		return (
+			<ListItem 
+				title={<ListItemTitle title={title} description={description} />}
+				onPress={handler}
+				hideSeparator={isLastRow}
+			/>
+		);
+	}
+
+	render() {
+		return (
+			<ListView
+				style={styles.list}
+				contentContainerStyle={styles.content}
+				contentOffset={{y: -20}}
+				contentInset={{top: 20, bottom: 60}}
+				dataSource={dataSource}
+				renderRow={this._renderExampleRow}
+			/>
+		);
+	}
 }
 
 function ListItemTitle({title, description}) {
@@ -110,11 +113,10 @@ const styles = {
         flex: 1,
     },
     content: {
-        borderColor: '#d9d9d9',
-        borderWidth: StyleSheet.hairlineWidth,
-    },
-    row: {
-        backgroundColor: 'rgba(255,255,255,.95)',
+
+    	backgroundColor: 'rgba(255,255,255,.95)',
+    	borderColor: '#d9d9d9',
+    	borderWidth: StyleSheet.hairlineWidth,
     },
     title: {
         fontSize: 17,
