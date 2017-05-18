@@ -46,8 +46,10 @@ const rightAxis = {
     labelCount: 6,
     drawZeroLineEnabled: true,
     forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
+    drawGridLinesEnabled: true,
+    gridColor:'red',
+    drawAxisLineEnabled: true,
+    drawGridDashEnabled: true,
     customAxisMax: 20,
     customAxisMin: -20,
     valueFormatter: {
@@ -72,7 +74,8 @@ const xAxis = {
     forceLabelsEnabled:true,
     labelCount:5,
     enabled: true,
-    drawGridLinesEnabled: false,
+    drawGridLinesEnabled: true,
+    drawGridDashEnabled: true,
     avoidFirstLastClippingEnabled: false,
     drawAxisLineEnabled: true,
 };
@@ -100,7 +103,7 @@ class AXLineChartExample extends Component {
                                                        onChartValueSelected={(e)=>{console.log("==>x",e)}}
                                                        parameter={parameter}
                                                        legend={legend}
-                                                       rightAxis={rightAxis}
+                                                       leftAxis={rightAxis}
                                                        xAxis={xAxis}
                                                        marker={marker}
                                                        data={{
@@ -171,7 +174,8 @@ class AXLineFillChartExample extends Component {
         drawCirclesEnabled: false,
         cubicIntensity: 0.2,
         drawFilledEnabled:true,
-        fillColor:'red'
+        fillColor:'red',
+        axisDependency:'right',
       },
       {
         yVals: [8.6,6,7,10,5,6,7,10,0],
@@ -187,6 +191,7 @@ class AXLineFillChartExample extends Component {
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
         drawFilledEnabled:false,
+        axisDependency:'right',
         fillColor:'#ff0000ff'
       }]
     }
@@ -228,6 +233,7 @@ class AXLineDataChartExample extends Component {
         drawVerticalHighlightIndicatorEnabled: true,
         drawCirclesEnabled: false,
         cubicIntensity: 0.2,
+        axisDependency:'right',
       },
       {
         yVals: [-8.6,6,7,10,-5,6,7,10,0],
@@ -242,6 +248,7 @@ class AXLineDataChartExample extends Component {
         drawVerticalHighlightIndicatorEnabled: true,
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
+        axisDependency:'right',
       }]
     }
   }/></View>;
