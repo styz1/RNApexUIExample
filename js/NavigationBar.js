@@ -2,17 +2,18 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import ReactNative, {View, Text, Navigator, Animated} from 'react-native';
+import ReactNative, {View, Text, Animated} from 'react-native';
+import NavigatorNavigationBar from 'react-native-deprecated-custom-components/src/NavigatorNavigationBar';
 var NavBarConfig = require('./NavBarConfig');
 
-class NavigationBar extends Navigator.NavigationBar {
+class NavigationBar extends NavigatorNavigationBar {
 	static propTypes = {
 		navBarHidden: PropTypes.bool,
 	};
 
 	static defaultProps = {
 		routeMapper: NavBarConfig,
-		...Navigator.NavigationBar.defaultProps,
+		...NavigatorNavigationBar.defaultProps,
 	};
 
 	state = {
