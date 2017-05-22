@@ -22,7 +22,7 @@ const parameter = {
         dataSetIndex: 1,
     },
     highlightPerTapEnabled: true,
-    edgeInsets:{bottom:0,left:10,top:10,right:10}
+    edgeInsets:{bottom:0,left:15,top:10,right:10}
 }
 
 const legend = {
@@ -37,6 +37,9 @@ const legend = {
 };
 
 const rightAxis = {
+    title:'(y轴)',
+    titlePosition:'top',
+    xTitleOffset:10,
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 12,
@@ -47,7 +50,7 @@ const rightAxis = {
     drawZeroLineEnabled: true,
     forceLabelsEnabled: true,
     drawGridLinesEnabled: true,
-    gridColor:'red',
+    gridLineColor:'red',
     drawAxisLineEnabled: true,
     drawGridDashEnabled: true,
     customAxisMax: 20,
@@ -61,10 +64,13 @@ const rightAxis = {
         positiveSuffix: '%'
     },
     labelTextAlign: 'right',
+    titleTextAlign: 'right',
 };
 
 const xAxis = {
-    labelPosition: 'bottom',
+    title:'(x轴)',
+    titlePosition: 'left',
+    xTitleOffset:-15,
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 14,
@@ -75,6 +81,7 @@ const xAxis = {
     labelCount:5,
     enabled: true,
     drawGridLinesEnabled: true,
+    gridLineColor:'red',
     drawGridDashEnabled: true,
     avoidFirstLastClippingEnabled: false,
     drawAxisLineEnabled: true,
@@ -99,45 +106,47 @@ class AXLineChartExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXLineChart style={{flex:1}}
-                                                       onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                       parameter={parameter}
-                                                       legend={legend}
-                                                       leftAxis={rightAxis}
-                                                       xAxis={xAxis}
-                                                       marker={marker}
-                                                       data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['a','b','c','d','e',],
+        return <View style={{height:300}}>
+          <AXLineChart style={{flex:1}}
+           onChartValueSelected={(e)=>{console.log("==>x",e)}}
+           parameter={parameter}
+           legend={legend}
+           leftAxis={rightAxis}
+           xAxis={xAxis}
+           marker={marker}
+           data={{
+              valueFont: {
+                fontFamily: 'HelveticaNeue-Light',
+                fontSize: 12,
+              },
+              xVals: ['a','b','c','d','e',],
 
-    dataSets:
-      [{
-        yVals: [4.2,7,6,9,6,],
-        label: 'label 1',
-        color: '#ff3b30',
-      },
-      {
-        yVals: [8.6,6,7,10,5,],
-        label: 'label 2',
-        lineWidth: 2,
-        circleRadius: 3,
-        color: '#4cd964',
-        circleColor: '#c969e0',
-        drawValuesEnabled: true,
-        drawCubicEnabled: false,
-        drawCirclesEnabled: true,
-        cubicIntensity: 0.2,
-        selectXIndexes: [1,3],
-        selectXStyle: {
-            circleRadius: 5,
-            circleColor: 'red',
-        },
-      }]
-    }
-  }/></View>;
+              dataSets:
+                [{
+                  yVals: [4.2,7,6,9,6,],
+                  label: 'label 1',
+                  color: '#ff3b30',
+                },
+                {
+                  yVals: [8.6,6,7,10,5,],
+                  label: 'label 2',
+                  lineWidth: 2,
+                  circleRadius: 3,
+                  color: '#4cd964',
+                  circleColor: '#c969e0',
+                  drawValuesEnabled: true,
+                  drawCubicEnabled: false,
+                  drawCirclesEnabled: true,
+                  cubicIntensity: 0.2,
+                  selectXIndexes: [1,3],
+                  selectXStyle: {
+                      circleRadius: 5,
+                      circleColor: 'red',
+                  },
+                }]
+              }
+            }/>
+          </View>;
     }
 }
 
@@ -149,7 +158,7 @@ class AXLineFillChartExample extends Component {
         return <View style={{height:300}}><AXLineChart style={{flex:1}}
                                                        parameter={parameter}
                                                        legend={legend}
-                                                       rightAxis={rightAxis}
+                                                       leftAxis={rightAxis}
                                                        xAxis={xAxis}
                                                        marker={marker}
                                                        data={{
@@ -157,7 +166,7 @@ class AXLineFillChartExample extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20031111','20061111','20081111','20011111','20031111','20061111','20081111'],
+    xVals: ['1998','2001','2003','2006','2008','2001','2003','2006','2008'],
     dataSets:
       [
       {
@@ -175,7 +184,6 @@ class AXLineFillChartExample extends Component {
         cubicIntensity: 0.2,
         drawFilledEnabled:true,
         fillColor:'red',
-        axisDependency:'right',
       },
       {
         yVals: [8.6,6,7,10,5,6,7,10,0],
@@ -217,7 +225,7 @@ class AXLineDataChartExample extends Component {
       fontFamily: 'HelveticaNeue-Light',
       fontSize: 12,
     },
-    xVals: ['19981111','20011111','20021111','20031111','20041111','20051111','20061111','20071111','20081111'],
+    xVals: ['1998','2001','2002','2003','2004','2005','2006','2007','2008'],
     dataSets:
       [
       {
