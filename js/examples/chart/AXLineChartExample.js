@@ -22,11 +22,11 @@ const parameter = {
         dataSetIndex: 1,
     },
     highlightPerTapEnabled: true,
-    edgeInsets:{bottom:0,left:15,top:10,right:10}
+    edgeInsets:{bottom:0,left:15,top:0,right:15}
 }
 
 const legend = {
-    enabled: true,
+    enabled: false,
     font: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 12,
@@ -35,6 +35,37 @@ const legend = {
     form: 'line',
 
 };
+
+
+const leftAxis = {
+    title:'(y轴)',
+    // titlePosition:'top',
+    xTitleOffset:-10,
+    labelFont: {
+        fontFamily: 'HelveticaNeue-Light',
+        fontSize: 12,
+    },
+    labelPosition: 'outside',
+    labelTextColor: 'black',
+    labelCount: 6,
+    drawZeroLineEnabled: true,
+    forceLabelsEnabled: true,
+    drawGridLinesEnabled: true,
+    gridLineColor:'red',
+    drawAxisLineEnabled: true,
+    drawGridDashEnabled: true,
+    customAxisMax: 20,
+    customAxisMin: -20,
+    valueFormatter: {
+        minimumIntegerDigits: 1,
+        maximumIntegerDigits: 2,
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
+        negativeSuffix: '%',
+        positiveSuffix: '%'
+    },
+    labelTextAlign: 'right',
+}
 
 const rightAxis = {
     title:'(y轴)',
@@ -69,8 +100,9 @@ const rightAxis = {
 
 const xAxis = {
     title:'(x轴)',
-    titlePosition: 'left',
-    xTitleOffset:-15,
+    titlePosition: 'right',
+    labelPosition:'bottom',
+    xTitleOffset:15,
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 14,
@@ -111,7 +143,7 @@ class AXLineChartExample extends Component {
            onChartValueSelected={(e)=>{console.log("==>x",e)}}
            parameter={parameter}
            legend={legend}
-           leftAxis={rightAxis}
+           leftAxis={leftAxis}
            xAxis={xAxis}
            marker={marker}
            data={{
@@ -131,13 +163,16 @@ class AXLineChartExample extends Component {
                   yVals: [8.6,6,7,10,5,],
                   label: 'label 2',
                   lineWidth: 2,
-                  circleRadius: 3,
+                  circleRadius: 4,
                   color: '#4cd964',
                   circleColor: '#c969e0',
                   drawValuesEnabled: true,
                   drawCubicEnabled: false,
                   drawCirclesEnabled: true,
                   cubicIntensity: 0.2,
+                  drawCircleHoleEnabled: true,
+                  circleHoleRadius: 2,
+                  circleHoleColor: 'white',
                   selectXIndexes: [1,3],
                   selectXStyle: {
                       circleRadius: 5,
@@ -158,7 +193,7 @@ class AXLineFillChartExample extends Component {
         return <View style={{height:300}}><AXLineChart style={{flex:1}}
                                                        parameter={parameter}
                                                        legend={legend}
-                                                       leftAxis={rightAxis}
+                                                       leftAxis={leftAxis}
                                                        xAxis={xAxis}
                                                        marker={marker}
                                                        data={{
