@@ -32,17 +32,22 @@ const yaxis = {
     labelTextColor: 'black',
     labelCount: 4,
     forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-    customAxisMin: 0
+    drawGridLinesEnabled: true,
+    drawAxisLineEnabled: true,
+    customAxisMin: 0,
+    title:'(y轴)',
+    titlePosition:'bottom',
+    xTitleOffset:-5,
 };
 
 const xaxis = {
     labelPosition: 'bottom',
     enabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
-
+    drawGridLinesEnabled: true,
+    drawAxisLineEnabled: true,
+    title:'(x轴)',
+    titlePosition:'right',
+    // xTitleOffset:-10,
 };
 
 const parameter = {
@@ -93,6 +98,7 @@ class AXBarChartStackExample extends Component {
         {
           yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
           stackLabels: ['label 1','label2'],
+          axisDependency: 'right',
           colors: ['#ff3b30','#33ffff']
         }
       ]
@@ -126,11 +132,13 @@ class AXBarChartMultiExample extends Component {
       [{
         yVals: [1,10,10,10,20],
         label: 'label 1',
+        axisDependency: 'right',
         color: '#ff3b30'
       },
       {
         yVals: [10,10,10,10,20],
         label: 'label 2',
+        axisDependency: 'right',
         color: '#ffe377'
       },
       ]
@@ -169,7 +177,7 @@ class AXBarChartBaseExample extends Component {
         yVals: [10,10,10,10,20],
         label: 'label 1',
         color: '#ff3b30',
-        axisDependency: 'left',
+        axisDependency: 'right',
         highlightColor:'#cccccc',
       }]
 
@@ -210,11 +218,13 @@ class AXBarChartCombineExample extends Component {
           stackLabels: ['label 1','label2'],
           colors: ['#ff3b30','#33ffff'],
           highlightColor:'#4ecc4a9f',
+          axisDependency: 'right',
         },
         {
         yVals: [10,10,10,10,20],
         label: 'label 1',
         color: '#464aff',
+        axisDependency: 'right',
         highlightColor:'red',
       }
       ]
@@ -260,6 +270,7 @@ class AXBarChartChangeExample extends Component {
         {
             yVals: this.state.yValues,
             label: 'label 1',
+            axisDependency: 'right',
             color: '#464aff'
         }
       ]
