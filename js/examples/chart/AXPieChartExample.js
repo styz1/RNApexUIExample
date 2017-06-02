@@ -15,7 +15,7 @@ const {AXPieChart} = require('react-native-apex-charts');
 
 const parameter = {
     drawSliceTextEnabled: true,
-    usePercentValuesEnabled: true,
+    usePercentValuesEnabled: false,
     holeRadiusPercent: 0.4,
     highlightPerTapEnabled: true,
     transparentCircleRadiusPercent: 0.61,
@@ -74,6 +74,7 @@ class AXPieChartExample extends Component {
                                 valueLineVariableLength: true,
                                 drawEntryLabelsEnabled: true,
                                 drawValuesEnabled: true,
+                                drawPercentsEnabled: false,
                                 minmumPercentValue: 1,
                                 holeRadiusPercent: 0.4,
                                 colors: ['red', 'green', 'blue', 'gray', 'black'],
@@ -140,7 +141,7 @@ class AXXPieChartExample extends Component {
         return <View style={{height: 300}}>
             <AXPieChart style={{flex: 1}}
                         parameter={{
-                            usePercentValuesEnabled: true,
+                            usePercentValuesEnabled: false,
                             highlightPerTapEnabled: true,
                             drawCenterTextEnabled: false,
                             rotationAngle: 0,
@@ -191,8 +192,7 @@ class AXXPieChartExample extends Component {
                                 xValuePosition: 'outside',
                                 sliceSpace: 2,
                                 // valueLineColor: 'red',
-                                usePercentValuesEnabled: true,
-                                wordWrapEnabled: false,
+                                drawPercentsEnabled: true,
                                 valueLinePart1OffsetPercentage: 1,
                                 valueLinePart1Length: 0.5,
                                 valueLinePart2Length: 0.5,
@@ -213,6 +213,7 @@ class AXXPieChartExample extends Component {
                                 drawValuesEnabled: true,
                                 entryLabelColor: 'black',
                                 valueTextColor: 'black',
+                                drawEntryLabelsEnabled: false,
                                 colors: ['green', 'blue'],
                             }]
                         }}/>
