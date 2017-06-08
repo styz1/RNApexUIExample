@@ -42,7 +42,7 @@ const xaxis = {
     enabled: true,
     drawGridLinesEnabled: false,
     drawAxisLineEnabled: false,
-    labelCount:5,
+    // labelCount:5,
 };
 
 const parameter = {
@@ -57,6 +57,7 @@ const parameter = {
         dataSetIndex: 0,
         stackIndex: 1,
     },
+    scaleXEnabled:true,
 }
 //type: 'rectangle',
 const marker={
@@ -79,7 +80,7 @@ class AXBarChartStackExample extends Component {
             <AXBarChart style={{flex:1}}
                         parameter={parameter}
                         legend={legend}
-                        rightAxis={yaxis}
+                        leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
@@ -114,7 +115,7 @@ class AXBarChartMultiExample extends Component {
             <AXBarChart style={{flex:1}}
                         parameter={parameter}
                         legend={legend}
-                        rightAxis={yaxis}
+                        leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
@@ -234,7 +235,7 @@ class AXBarChartCombineExample extends Component {
             <AXBarChart style={{flex:1}}
                         parameter={{...parameter,highlightAllBarEnabled:true}}
                         legend={legend}
-                        rightAxis={yaxis}
+                        leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
@@ -287,7 +288,7 @@ class AXBarChartChangeExample extends Component {
             <AXBarChart style={{flex:1}}
                         parameter={parameter}
                         legend={legend}
-                        rightAxis={yaxis}
+                        leftAxis={yaxis}
                         xAxis={xaxis}
                         data={{
     valueFont: {
