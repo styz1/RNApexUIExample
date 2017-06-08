@@ -42,7 +42,7 @@ const xaxis = {
     enabled: true,
     drawGridLinesEnabled: false,
     drawAxisLineEnabled: false,
-    labelCount:1,
+    labelCount:5,
 };
 
 const parameter = {
@@ -185,6 +185,46 @@ class AXBarChartBaseExample extends Component {
 }
 
 
+
+
+class AXBarChartColorsExample extends Component {
+
+    render() {
+
+
+        return <View style={{height:300}}>
+            <AXBarChart style={{flex:1}}
+                        parameter={parameter}
+                        onChartValueSelected={(e)=>{console.log("==>",e)}}
+                        legend={legend}
+                        leftAxis={yaxis}
+                        xAxis={xaxis}
+                        marker={marker}
+                        data={{
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['a','b','c','d','e'],
+                            dataSets:
+                                [{
+                                    yVals: [10,20,30,40,50],
+                                    label: 'label 1',
+                                    colors: ['#00ffff','red','blue','yellow','#003b30'],
+                                    axisDependency: 'left',
+                                    highlightColor:'#cccccc',
+                                }]
+
+
+
+
+                        }
+                        }/>
+
+        </View>;
+    }
+}
+
 class AXBarChartCombineExample extends Component {
 
     render() {
@@ -279,6 +319,10 @@ module.exports = {
         {
             title: 'AXBarChart-简单',
             render: () => <AXBarChartBaseExample/>
+        },
+        {
+            title: 'AXBarChart-多颜色',
+            render: () => <AXBarChartColorsExample/>
         },
         {
             title: 'AXBarChart-堆',
