@@ -213,7 +213,6 @@ class AXXPieChartExample extends Component {
                                 drawValuesEnabled: true,
                                 entryLabelColor: 'black',
                                 valueTextColor: 'black',
-                                drawEntryLabelsEnabled: false,
                                 colors: ['green', 'blue'],
                             }]
                         }}/>

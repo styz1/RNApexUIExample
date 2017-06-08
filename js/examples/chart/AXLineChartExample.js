@@ -22,7 +22,9 @@ const parameter = {
         dataSetIndex: 1,
     },
     highlightPerTapEnabled: true,
-    edgeInsets:{bottom:0,left:15,top:0,right:15}
+    edgeInsets:{bottom:0,left:15,top:0,right:15},
+    scaleXEnabled:true,
+    scaleYEnabled:false,
 }
 
 const legend = {
@@ -109,8 +111,8 @@ const xAxis = {
 
     },
     // labelRotationAngle: 60,
-    forceLabelsEnabled:true,
-    labelCount:5,
+    // forceLabelsEnabled:true,
+    // labelCount:5,
     enabled: true,
     drawGridLinesEnabled: true,
     gridLineColor:'red',
