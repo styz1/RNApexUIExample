@@ -58,6 +58,7 @@ const parameter = {
         stackIndex: 1,
     },
     scaleXEnabled:true,
+    scaleYEnabled:true,
 }
 //type: 'rectangle',
 const marker={

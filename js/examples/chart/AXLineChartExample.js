@@ -24,7 +24,7 @@ const parameter = {
     highlightPerTapEnabled: true,
     edgeInsets:{bottom:0,left:15,top:0,right:15},
     scaleXEnabled:true,
-    scaleYEnabled:false,
+    scaleYEnabled:true,
 }
 
 const legend = {
