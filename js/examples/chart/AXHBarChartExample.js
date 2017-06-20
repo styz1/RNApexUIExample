@@ -34,7 +34,7 @@ const yaxis = {
     forceLabelsEnabled: true,
     drawGridLinesEnabled: true,
     drawAxisLineEnabled: true,
-    customAxisMin: 0,
+    // customAxisMin: -2,
     title:'(y轴)',
     titlePosition:'bottom',
     xTitleOffset:-5,
@@ -92,13 +92,14 @@ class AXBarChartStackExample extends Component {
       fontSize: 12,
     },
     xVals: ['1998','2001','2003','2006','2008'],
-
+    valuePosition:'center',
     dataSets:
       [
         {
-          yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
+          yVals: [[10,-1],[7,-2],[6,-3],[9,-4],[6,-5]],
           stackLabels: ['label 1','label2'],
           axisDependency: 'right',
+          drawValuesEnabled: true,
           colors: ['#ff3b30','#33ffff']
         }
       ]
