@@ -10,7 +10,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text} from 'react-native';
 import {Button} from 'react-native-apex-ui';
 
-const {AXHorizontalBarChart}=require('react-native-apex-charts');
+const {AXHorizontalBarChart} = require('react-native-apex-charts');
 
 const legend = {
     enabled: true,
@@ -34,10 +34,10 @@ const yaxis = {
     forceLabelsEnabled: true,
     drawGridLinesEnabled: true,
     drawAxisLineEnabled: true,
-    // customAxisMin: -2,
-    title:'(y轴)',
-    titlePosition:'bottom',
-    xTitleOffset:-5,
+    customAxisMin: 0,
+    title: '(y轴)',
+    titlePosition: 'bottom',
+    xTitleOffset: -5,
 };
 
 const xaxis = {
@@ -45,8 +45,8 @@ const xaxis = {
     enabled: true,
     drawGridLinesEnabled: true,
     drawAxisLineEnabled: true,
-    title:'(x轴)',
-    titlePosition:'right',
+    title: '(x轴)',
+    titlePosition: 'right',
     // xTitleOffset:-10,
 };
 
@@ -57,12 +57,13 @@ const parameter = {
         dataSetIndex: 0,
         stackIndex: 1,
     },
-    highlightAllBarEnabled:true,
-    highlightFullBarEnabled:true,
+    highlightAllBarEnabled: true,
+    highlightFullBarEnabled: true,
+    scaleXEnabled: true,
 }
 
 
-const marker={
+const marker = {
     type: 'balloon',
     font: {
         fontFamily: 'HelveticaNeue-Bold',
@@ -79,32 +80,34 @@ class AXBarChartStackExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXHorizontalBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXHorizontalBarChart style={{flex: 1}}
                                   parameter={parameter}
                                   legend={legend}
                                   rightAxis={yaxis}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    valuePosition:'center',
-    dataSets:
-      [
-        {
-          yVals: [[10,-1],[7,-2],[6,-3],[9,-4],[6,-5]],
-          stackLabels: ['label 1','label2'],
-          axisDependency: 'right',
-          drawValuesEnabled: true,
-          colors: ['#ff3b30','#33ffff']
-        }
-      ]
-    }
-  }/>
+                                      valueFont: {
+                                          fontFamily: 'HelveticaNeue-Light',
+                                          fontSize: 12,
+                                      },
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      verticalValueAlignment: 'bottom',
+                                      horizontalValueAlignment: 'right',
+                                      barWidth: 0.6,
+                                      dataSets: [
+                                          {
+                                              yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
+                                              stackLabels: ['label 1', 'label2'],
+                                              stackValueColors:['#ff3b30', '#33ffff'],
+                                              axisDependency: 'right',
+                                              drawValuesEnabled: true,
+                                              colors: ['#ff3b30', '#33ffff'],
+                                          }
+                                      ]
+                                  }
+                                  }/>
 
         </View>;
     }
@@ -116,39 +119,36 @@ class AXBarChartMultiExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXHorizontalBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXHorizontalBarChart style={{flex: 1}}
                                   parameter={parameter}
                                   legend={legend}
                                   rightAxis={yaxis}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    dataSets:
-      [{
-        yVals: [1,10,10,10,20],
-        label: 'label 1',
-        axisDependency: 'right',
-        color: '#ff3b30'
-      },
-      {
-        yVals: [10,10,10,10,20],
-        label: 'label 2',
-        axisDependency: 'right',
-        color: '#ffe377'
-      },
-      ]
+                                      valueFont: {
+                                          fontFamily: 'HelveticaNeue-Light',
+                                          fontSize: 12,
+                                      },
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      dataSets: [{
+                                          yVals: [1, 10, 10, 10, 20],
+                                          label: 'label 1',
+                                          axisDependency: 'right',
+                                          color: '#ff3b30'
+                                      },
+                                          {
+                                              yVals: [10, 10, 10, 10, 20],
+                                              label: 'label 2',
+                                              axisDependency: 'right',
+                                              color: '#ffe377'
+                                          },
+                                      ]
 
 
-
-
-    }
-  }/>
+                                  }
+                                  }/>
 
         </View>;
     }
@@ -159,34 +159,37 @@ class AXBarChartBaseExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXHorizontalBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXHorizontalBarChart style={{flex: 1}}
                                   parameter={parameter}
-                                  onChartValueSelected={(e)=>{console.log("==>",e)}}
+                                  onChartValueSelected={(e) => {
+                                      console.log("==>", e)
+                                  }}
                                   legend={legend}
                                   rightAxis={yaxis}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    dataSets:
-      [{
-        yVals: [10,10,10,10,20],
-        label: 'label 1',
-        color: '#ff3b30',
-        axisDependency: 'right',
-        highlightColor:'#cccccc',
-      }]
+                                      valueFont: {
+                                          fontFamily: 'HelveticaNeue-Light',
+                                          fontSize: 12,
+                                      },
+                                      barWidth: 0.5,
+                                      verticalValueAlignment: 'bottom',
+                                      horizontalValueAlignment: 'right',
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      dataSets: [{
+                                          yVals: [10, 10, 10, 10, 20],
+                                          label: 'label 1',
+                                          drawValuesEnabled: true,
+                                          color: '#ff3b30',
+                                          axisDependency: 'right',
+                                          highlightColor: '#cccccc',
+                                      }]
 
 
-
-
-    }
-  }/>
+                                  }
+                                  }/>
 
         </View>;
     }
@@ -198,39 +201,38 @@ class AXBarChartCombineExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXHorizontalBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXHorizontalBarChart style={{flex: 1}}
                                   parameter={parameter}
                                   legend={legend}
                                   rightAxis={yaxis}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    barWidth:0.3,
-    dataSets:
-      [
-        {
-          yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
-          stackLabels: ['label 1','label2'],
-          colors: ['#ff3b30','#33ffff'],
-          highlightColor:'#4ecc4a9f',
-          axisDependency: 'right',
-        },
-        {
-        yVals: [10,10,10,10,20],
-        label: 'label 1',
-        color: '#464aff',
-        axisDependency: 'right',
-        highlightColor:'red',
-      }
-      ]
-    }
-  }/>
+                                      valueFont: {
+                                          fontFamily: 'HelveticaNeue-Light',
+                                          fontSize: 12,
+                                      },
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      barWidth: 0.3,
+                                      dataSets: [
+                                          {
+                                              yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
+                                              stackLabels: ['label 1', 'label2'],
+                                              colors: ['#ff3b30', '#33ffff'],
+                                              highlightColor: '#4ecc4a9f',
+                                              axisDependency: 'right',
+                                          },
+                                          {
+                                              yVals: [10, 10, 10, 10, 20],
+                                              label: 'label 1',
+                                              color: '#464aff',
+                                              axisDependency: 'right',
+                                              highlightColor: 'red',
+                                          }
+                                      ]
+                                  }
+                                  }/>
 
         </View>;
     }
@@ -248,35 +250,36 @@ class AXBarChartChangeExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
+        return <View style={{height: 300}}>
             <Button
                 caption='change'
-                style={[ {borderWidth: 1}]}
-                onPress={()=>{this.setState({yValues:[4,1,23,20,10]})}}
+                style={[{borderWidth: 1}]}
+                onPress={() => {
+                    this.setState({yValues: [4, 1, 23, 20, 10]})
+                }}
             />
-            <AXHorizontalBarChart style={{flex:1}}
+            <AXHorizontalBarChart style={{flex: 1}}
                                   legend={legend}
                                   rightAxis={yaxis}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    barWidth:0.3,
-    dataSets:
-      [
-        {
-            yVals: this.state.yValues,
-            label: 'label 1',
-            axisDependency: 'right',
-            color: '#464aff'
-        }
-      ]
-    }
-  }/>
+                                      valueFont: {
+                                          fontFamily: 'HelveticaNeue-Light',
+                                          fontSize: 12,
+                                      },
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      barWidth: 0.3,
+                                      dataSets: [
+                                          {
+                                              yVals: this.state.yValues,
+                                              label: 'label 1',
+                                              axisDependency: 'right',
+                                              color: '#464aff'
+                                          }
+                                      ]
+                                  }
+                                  }/>
 
         </View>;
     }
