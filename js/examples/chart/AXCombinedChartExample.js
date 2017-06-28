@@ -10,7 +10,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text} from 'react-native';
 
 
-const {AXCombinedChart}=require('react-native-apex-charts');
+const {AXCombinedChart} = require('react-native-apex-charts');
 
 
 const parameter = {
@@ -26,6 +26,7 @@ const parameter = {
     highlightPerTapEnabled: true,
     highlightFullBarEnabled: true,
     highlightAllBarEnabled: true,
+    edgeInsets: {bottom: 0, left: 0, top: 0, right: 0},
 }
 
 const legend = {
@@ -53,14 +54,15 @@ const rightAxis = {
     drawAxisLineEnabled: true,
     customAxisMax: 20,
     customAxisMin: 0,
-    valueFormatter: {
-        minimumIntegerDigits: 1,
-        maximumIntegerDigits: 2,
-        maximumFractionDigits: 2,
-        minimumFractionDigits: 2,
-        negativeSuffix: '%',
-        positiveSuffix: '%'
-    },
+    title:'(中国)',
+    // valueFormatter: {
+    //     minimumIntegerDigits: 1,
+    //     maximumIntegerDigits: 2,
+    //     maximumFractionDigits: 2,
+    //     minimumFractionDigits: 2,
+    //     negativeSuffix: '%',
+    //     positiveSuffix: '%'
+    // },
     labelTextAlign: 'right',
 };
 
@@ -76,6 +78,8 @@ const xAxis = {
     drawGridLinesEnabled: false,
     avoidFirstLastClippingEnabled: false,
     drawAxisLineEnabled: true,
+    // title: '(月分)',
+    // titlePosition: 'right',
 };
 
 const lineData = {
@@ -108,7 +112,7 @@ const barData_simple = {
     }]
 };
 
-const xVals = ['19981111', '20011111', '20031111', '20061111', '20081111'];
+const xVals = ['a', 'b', 'c', 'd', 'e'];
 const barData_stack = {
     barWidth: 0.8,
     dataSets: [
@@ -155,7 +159,7 @@ const barData_paralleling = {
     ]
 };
 
-const marker={
+const marker = {
     type: 'balloon',
     font: {
         fontFamily: 'HelveticaNeue-Bold',
@@ -170,24 +174,26 @@ const marker={
 class AXCombinedChartExample1 extends Component {
 
     render() {
-        return <View style={{height:300}}>
-            <AXCombinedChart style={{flex:1}}
-                             onChartValueSelected={(e)=>{console.log("==>x",e)}}
+        return <View style={{height: 300}}>
+            <AXCombinedChart style={{flex: 1}}
+                             onChartValueSelected={(e) => {
+                                 console.log("==>x", e)
+                             }}
                              parameter={parameter}
                              legend={legend}
                              leftAxis={rightAxis}
                              xAxis={xAxis}
                              marker={marker}
                              data={{
-            valueFont: {
-              fontFamily: 'HelveticaNeue-Light',
-              fontSize: 12,
-            },
-            xVals: xVals,
+                                 valueFont: {
+                                     fontFamily: 'HelveticaNeue-Light',
+                                     fontSize: 12,
+                                 },
+                                 xVals: xVals,
 
-            lineData:lineData,
-            barData:barData_simple
-          }}/>
+                                 lineData: lineData,
+                                 barData: barData_simple
+                             }}/>
         </View>;
     }
 }
@@ -197,23 +203,25 @@ class AXCombinedChartExample2 extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={xAxis}
-                                                           marker={marker}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: xVals,
+        return <View style={{height: 300}}><AXCombinedChart style={{flex: 1}}
+                                                            onChartValueSelected={(e) => {
+                                                                console.log("==>x", e)
+                                                            }}
+                                                            parameter={parameter}
+                                                            legend={legend}
+                                                            rightAxis={rightAxis}
+                                                            xAxis={xAxis}
+                                                            marker={marker}
+                                                            data={{
+                                                                valueFont: {
+                                                                    fontFamily: 'HelveticaNeue-Light',
+                                                                    fontSize: 12,
+                                                                },
+                                                                xVals: xVals,
 
-    lineData:lineData,
-    barData:barData_stack
-  }}/></View>;
+                                                                lineData: lineData,
+                                                                barData: barData_stack
+                                                            }}/></View>;
     }
 }
 
@@ -222,23 +230,25 @@ class AXCombinedChartExample3 extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={xAxis}
-                                                           marker={marker}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: xVals,
+        return <View style={{height: 300}}><AXCombinedChart style={{flex: 1}}
+                                                            onChartValueSelected={(e) => {
+                                                                console.log("==>x", e)
+                                                            }}
+                                                            parameter={parameter}
+                                                            legend={legend}
+                                                            rightAxis={rightAxis}
+                                                            xAxis={xAxis}
+                                                            marker={marker}
+                                                            data={{
+                                                                valueFont: {
+                                                                    fontFamily: 'HelveticaNeue-Light',
+                                                                    fontSize: 12,
+                                                                },
+                                                                xVals: xVals,
 
-    lineData:lineData,
-    barData:barData_paralleling
-  }}/></View>;
+                                                                lineData: lineData,
+                                                                barData: barData_paralleling
+                                                            }}/></View>;
     }
 }
 
@@ -247,23 +257,25 @@ class AXCombinedChartExample4 extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={xAxis}
-                                                           marker={marker}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: xVals,
+        return <View style={{height: 300}}><AXCombinedChart style={{flex: 1}}
+                                                            onChartValueSelected={(e) => {
+                                                                console.log("==>x", e)
+                                                            }}
+                                                            parameter={parameter}
+                                                            legend={legend}
+                                                            rightAxis={rightAxis}
+                                                            xAxis={xAxis}
+                                                            marker={marker}
+                                                            data={{
+                                                                valueFont: {
+                                                                    fontFamily: 'HelveticaNeue-Light',
+                                                                    fontSize: 12,
+                                                                },
+                                                                xVals: xVals,
 
-    lineData:lineData,
-    barData:barData_combined
-  }}/></View>;
+                                                                lineData: lineData,
+                                                                barData: barData_combined
+                                                            }}/></View>;
     }
 }
 
@@ -273,24 +285,29 @@ class AXCombinedChartExample5 extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={{...xAxis,
-                                                                forceLabelsEnabled:true,
-                                                                labelCount:5,}}
-                                                           marker={marker}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: xVals,
+        return <View style={{height: 300}}><AXCombinedChart style={{flex: 1,}}
+                                                            onChartValueSelected={(e) => {
+                                                                console.log("==>x", e)
+                                                            }}
+                                                            parameter={parameter}
+                                                            legend={legend}
+                                                            rightAxis={rightAxis}
 
-    lineData:lineData,
-  }}/></View>;
+                                                            xAxis={{
+                                                                ...xAxis,
+                                                                forceLabelsEnabled: false,
+                                                                labelCount: 5,
+                                                            }}
+                                                            marker={marker}
+                                                            data={{
+                                                                valueFont: {
+                                                                    fontFamily: 'HelveticaNeue-Light',
+                                                                    fontSize: 12,
+                                                                },
+                                                                xVals: xVals,
+                                                                barData: {},
+                                                                lineData: lineData,
+                                                            }}/></View>;
     }
 }
 
@@ -299,22 +316,24 @@ class AXCombinedChartExample6 extends Component {
     render() {
 
 
-        return <View style={{height:300}}><AXCombinedChart style={{flex:1}}
-                                                           onChartValueSelected={(e)=>{console.log("==>x",e)}}
-                                                           parameter={parameter}
-                                                           legend={legend}
-                                                           rightAxis={rightAxis}
-                                                           xAxis={xAxis}
-                                                           marker={marker}
-                                                           data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: xVals,
+        return <View style={{height: 300}}><AXCombinedChart style={{flex: 1}}
+                                                            onChartValueSelected={(e) => {
+                                                                console.log("==>x", e)
+                                                            }}
+                                                            parameter={parameter}
+                                                            legend={legend}
+                                                            rightAxis={rightAxis}
+                                                            xAxis={xAxis}
+                                                            marker={marker}
+                                                            data={{
+                                                                valueFont: {
+                                                                    fontFamily: 'HelveticaNeue-Light',
+                                                                    fontSize: 12,
+                                                                },
+                                                                xVals: xVals,
 
-    barData:barData_combined
-  }}/></View>;
+                                                                barData: barData_combined
+                                                            }}/></View>;
     }
 }
 
@@ -327,25 +346,25 @@ module
             title: '单图-线',
             render: () => <AXCombinedChartExample5 />
         },
-        {
-            title: '单图-柱',
-            render: () => <AXCombinedChartExample6 />
-        },
-        {
-            title: '基本',
-            render: () => <AXCombinedChartExample1 />
-        },
-        {
-            title: '堆',
-            render: () => <AXCombinedChartExample2 />
-        },
-        {
-            title: '并列',
-            render: () => <AXCombinedChartExample3 />
-        },
-        {
-            title: '柱状图复合',
-            render: () => <AXCombinedChartExample4 />
-        },
+        // {
+        //     title: '单图-柱',
+        //     render: () => <AXCombinedChartExample6 />
+        // },
+        // {
+        //     title: '基本',
+        //     render: () => <AXCombinedChartExample1 />
+        // },
+        // {
+        //     title: '堆',
+        //     render: () => <AXCombinedChartExample2 />
+        // },
+        // {
+        //     title: '并列',
+        //     render: () => <AXCombinedChartExample3 />
+        // },
+        // {
+        //     title: '柱状图复合',
+        //     render: () => <AXCombinedChartExample4 />
+        // },
     ]
 }
