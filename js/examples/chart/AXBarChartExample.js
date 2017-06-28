@@ -30,11 +30,11 @@ const yaxis = {
     },
     labelPosition: 'outside',
     labelTextColor: 'black',
-    labelCount: 4,
-    forceLabelsEnabled: true,
+    // labelCount: 4,
+    // forceLabelsEnabled: true,
     drawGridLinesEnabled: false,
     drawAxisLineEnabled: false,
-    // customAxisMin: 0,
+    customAxisMin: 0,
     // customAxisMax: 70,
 };
 
@@ -91,14 +91,14 @@ class AXBarChartStackExample extends Component {
       fontSize: 12,
     },
     xVals: ['1998','2001','2003','2006','2008'],
-    valuePosition:'center',
     dataSets:
       [
         {
           yVals: [[10,1,2],[-7,1,1],[6,2,2],[-9,2,1],[6,1,2]],
           stackLabels: ['label 1','label2','label3'],
           drawValuesEnabled: true,
-          colors: ['#ff3b30','#33ffff','#3300ff']
+          colors: ['#ff3b30','#33ffff','#3300ff'],
+          axisDependency:'left',
         }
       ]
     }
@@ -131,12 +131,14 @@ class AXBarChartMultiExample extends Component {
       [{
         yVals: [10,10,10,10,20],
         label: 'label 1',
-        color: '#ff3b30'
+        color: '#ff3b30',
+        axisDependency:'left',
       },
       {
         yVals: [10,10,10,10,20],
         label: 'label 2',
-        color: '#ffe377'
+        color: '#ffe377',
+        axisDependency:'left',
       },
       ]
 
@@ -255,12 +257,14 @@ class AXBarChartCombineExample extends Component {
           stackLabels: ['label1','label2'],
           colors: ['#ff3b30','#33ffff'],
           highlightColor:'#4ecc4a9f',
+          axisDependency:'left',
         },
         {
         yVals: [10,10,10,10,20],
         label: 'label1',
         color: '#464aff',
         highlightColor:'red',
+        axisDependency:'left',
       }
       ]
     }
@@ -305,7 +309,8 @@ class AXBarChartChangeExample extends Component {
         {
             yVals: this.state.yValues,
             label: 'label 1',
-            color: '#464aff'
+            color: '#464aff',
+            axisDependency:'left',
         }
       ]
     }

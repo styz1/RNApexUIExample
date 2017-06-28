@@ -39,6 +39,32 @@ const legend = {
     form: 'line',
 
 };
+const leftAxis = {
+    labelFont: {
+        fontFamily: 'HelveticaNeue-Light',
+        fontSize: 12,
+    },
+    labelPosition: 'outside',
+    labelTextColor: 'black',
+    labelCount: 5,
+    drawZeroLineEnabled: true,
+    forceLabelsEnabled: true,
+    drawGridLinesEnabled: false,
+    drawAxisLineEnabled: true,
+    customAxisMax: 20,
+    customAxisMin: 0,
+    title:'(中国)',
+    titlePosition:'top',
+    valueFormatter: {
+        minimumIntegerDigits: 1,
+        maximumIntegerDigits: 2,
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
+        negativeSuffix: '%',
+        positiveSuffix: '%'
+    },
+    labelTextAlign: 'right',
+};
 
 const rightAxis = {
     labelFont: {
@@ -55,6 +81,7 @@ const rightAxis = {
     customAxisMax: 20,
     customAxisMin: 0,
     title:'(中国)',
+    titlePosition:'top',
     // valueFormatter: {
     //     minimumIntegerDigits: 1,
     //     maximumIntegerDigits: 2,
@@ -63,7 +90,7 @@ const rightAxis = {
     //     negativeSuffix: '%',
     //     positiveSuffix: '%'
     // },
-    labelTextAlign: 'right',
+    labelTextAlign: 'left',
 };
 
 const xAxis = {
@@ -292,7 +319,7 @@ class AXCombinedChartExample5 extends Component {
                                                             parameter={parameter}
                                                             legend={legend}
                                                             rightAxis={rightAxis}
-
+                                                            leftAxis={leftAxis}
                                                             xAxis={{
                                                                 ...xAxis,
                                                                 forceLabelsEnabled: false,

@@ -19,7 +19,9 @@ const parameter = {
     holeRadiusPercent: 0.4,
     highlightPerTapEnabled: true,
     transparentCircleRadiusPercent: 0.61,
-    drawCenterTextEnabled: false,
+    drawCenterTextEnabled: true,
+    centerText:'test',
+    centerTextColor:'red',
     drawHoleEnabled: true,
     rotationAngle: 0,
     rotationEnabled: true,
@@ -33,7 +35,7 @@ const parameter = {
 };
 
 const legend = {
-    enabled: true,
+    enabled: false,
     font: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 12,
@@ -63,7 +65,7 @@ class AXPieChartExample extends Component {
                             valueTextColor: 'black',
                             dataSet: {
                                 xVals: ['Java', 'OC', 'JS', 'C++', 'PHP'],
-                                yVals: [40, 10, 23, 20, 10],
+                                yVals: [0, 0, 0, 0, 0],
                                 yValuePosition: 'outside',
                                 xValuePosition: 'outside',
                                 sliceSpace: 2,
@@ -74,8 +76,8 @@ class AXPieChartExample extends Component {
                                 valueLineVariableLength: true,
                                 drawEntryLabelsEnabled: true,
                                 drawValuesEnabled: true,
-                                drawPercentsEnabled: false,
-                                minmumPercentValue: 1,
+                                drawPercentsEnabled: true,
+                                // minmumPercentValue: 1,
                                 holeRadiusPercent: 0.4,
                                 colors: ['red', 'green', 'blue', 'gray', 'black'],
                             }

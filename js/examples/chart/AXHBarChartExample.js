@@ -92,6 +92,7 @@ class AXBarChartStackExample extends Component {
                                           fontFamily: 'HelveticaNeue-Light',
                                           fontSize: 12,
                                       },
+                                      // valueTextColor:'black',
                                       xVals: ['1998', '2001', '2003', '2006', '2008'],
                                       verticalValueAlignment: 'bottom',
                                       horizontalValueAlignment: 'right',
@@ -100,7 +101,8 @@ class AXBarChartStackExample extends Component {
                                           {
                                               yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
                                               stackLabels: ['label 1', 'label2'],
-                                              stackValueColors:['#ff3b30', '#33ffff'],
+                                              // stackValueColors:['#ff3b30', '#33ffff'],
+                                              // valueColors:['#ff3b30', '#33ffff'],
                                               axisDependency: 'right',
                                               drawValuesEnabled: true,
                                               colors: ['#ff3b30', '#33ffff'],

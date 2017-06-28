@@ -42,7 +42,7 @@ const legend = {
 const leftAxis = {
     title:'(y轴)',
     // titlePosition:'top',
-    xTitleOffset:-10,
+    // xTitleOffset:-10,
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 12,
@@ -72,7 +72,7 @@ const leftAxis = {
 const rightAxis = {
     title:'(y轴)',
     titlePosition:'top',
-    xTitleOffset:10,
+    // xTitleOffset:10,
     labelFont: {
         fontFamily: 'HelveticaNeue-Light',
         fontSize: 12,
@@ -97,7 +97,7 @@ const rightAxis = {
         positiveSuffix: '%'
     },
     labelTextAlign: 'right',
-    titleTextAlign: 'right',
+    // titleTextAlign: 'left',
 };
 
 const xAxis = {
@@ -128,8 +128,8 @@ const marker={
         //     fontSize: 12,
     // },
     color: '#FFffffAA',
-        xAxisLabelEnabled: true,
-        labelEnabled: true,
+        xAxisLabelEnabled: false,
+        labelEnabled: false,
         drawAllTipsEnabled: true,
     // positiveColor:'gray',
     // negativeColor:'blue',
@@ -140,12 +140,13 @@ class AXLineChartExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
+        return <View style={{height:300,backgroundColor:'blue'}}>
           <AXLineChart style={{flex:1}}
            onChartValueSelected={(e)=>{console.log("==>x",e)}}
            parameter={parameter}
            legend={legend}
            leftAxis={leftAxis}
+           rightAxis={rightAxis}
            xAxis={xAxis}
            marker={marker}
            data={{
@@ -165,7 +166,7 @@ class AXLineChartExample extends Component {
                   yVals: [8.6,6,7,10,5,],
                   label: 'label 2',
                   lineWidth: 2,
-                  circleRadius: 4,
+                  circleRadius: 10,
                   color: '#4cd964',
                   circleColor: '#c969e0',
                   drawValuesEnabled: true,
@@ -173,13 +174,17 @@ class AXLineChartExample extends Component {
                   drawCirclesEnabled: true,
                   cubicIntensity: 0.2,
                   drawCircleHoleEnabled: true,
-                  circleHoleRadius: 2,
+                  circleHoleRadius: 8,
                   circleHoleColor: 'white',
-                  selectXIndexes: [1,3],
+                  selectXIndexes: [0,3],
                   selectXStyle: {
                       circleRadius: 5,
                       circleColor: 'red',
                   },
+                  highlightCircleRadius: 8,
+                  highlightCircleColor: '#F4FA1A',
+                  highlightTransparentCircleRadius: 14,
+                  highlightTransparentCircleColor:'#F4FA1AA0'
                 }]
               }
             }/>
@@ -196,6 +201,7 @@ class AXLineFillChartExample extends Component {
                                                        parameter={parameter}
                                                        legend={legend}
                                                        leftAxis={leftAxis}
+                                                       rightAxis={rightAxis}
                                                        xAxis={xAxis}
                                                        marker={marker}
                                                        data={{
@@ -254,6 +260,7 @@ class AXLineDataChartExample extends Component {
             <AXLineChart style={{flex:1}}
                          parameter={parameter}
                          legend={legend}
+                         leftAxis={leftAxis}
                          rightAxis={rightAxis}
                          xAxis={xAxis}
                          marker={marker}
@@ -269,14 +276,16 @@ class AXLineDataChartExample extends Component {
         yVals: [18.6,16,17,10,15,16,17,10,10],
         label: 'label 1',
         lineWidth: 2,
-        circleRadius: 3,
+        circleRadius: 10,
+        circleHoleRadius: 8,
         color: '#d99299',
         circleColor: '#c969e0',
         drawValuesEnabled: false,
         drawCubicEnabled: false,
         drawHorizontalHighlightIndicatorEnabled: true,
         drawVerticalHighlightIndicatorEnabled: true,
-        drawCirclesEnabled: false,
+        drawCirclesEnabled: true,
+        drawCircleHoleEnabled: true,
         cubicIntensity: 0.2,
         axisDependency:'right',
       },
