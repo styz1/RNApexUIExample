@@ -112,10 +112,45 @@ class AXScatterChartExample extends Component {
 }
 
 
+
+class AXScatterChartDefaultExample extends Component {
+
+    render() {
+
+
+        return <View style={{height:300}}>
+            <AXScatterChart style={{flex:1}}
+                            data={{
+                                valueFont: {
+                                    fontFamily: 'HelveticaNeue-Light',
+                                    fontSize: 12,
+                                },
+                                xVals: ['1998','1999','2000','2001','2002','2003'],
+                                dataSets:
+                                    [{
+                                        yVals: [10,13,14,5,6,7],
+                                        label: 'label 1',
+                                    }]
+
+
+
+
+                            }
+                            }/>
+
+        </View>;
+    }
+}
+
 module.exports = {
     title: 'AXScatterChartExample',
     description: '散点图',
     examples: [
+        {
+            title: 'AXScatterChart-default',
+            render: () => <AXScatterChartDefaultExample/>
+        },
+
         {
             title: 'AXScatterChart-简单',
             render: () => <AXScatterChartExample/>

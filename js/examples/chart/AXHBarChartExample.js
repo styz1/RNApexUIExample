@@ -35,9 +35,10 @@ const yaxis = {
     drawGridLinesEnabled: true,
     drawAxisLineEnabled: true,
     customAxisMin: 0,
+    customAxisMax:20,
     title: '(y轴)',
-    titlePosition: 'bottom',
-    xTitleOffset: -5,
+    titlePosition: 'top',
+    // xTitleOffset: -5,
 };
 
 const xaxis = {
@@ -69,7 +70,7 @@ const marker = {
         fontFamily: 'HelveticaNeue-Bold',
         fontSize: 12,
     },
-    color: '#FF000033',
+    color: 'white',
     xAxisLabelEnabled: true,
     labelEnabled: true,
     drawAllTipsEnabled: false,
@@ -287,11 +288,37 @@ class AXBarChartChangeExample extends Component {
     }
 }
 
+class AXBarChartDefaultExample extends Component {
+
+    render() {
+
+
+        return <View style={{height: 300}}>
+            <AXHorizontalBarChart style={{flex: 1}}
+                                  xAxis={{
+                                      title:'中国',
+                                  }}
+                                  data={{
+                                      xVals: ['1998', '2001', '2003', '2006', '2008'],
+                                      dataSets: [{
+                                          yVals: [10, 10, 10, 10, 20],
+                                          label: 'label 1',
+                                      }]
+                                  }
+                                  }/>
+
+        </View>;
+    }
+}
+
 module.exports = {
     title: 'AXHBarChartExample',
     description: '水平柱状图',
     examples: [
-
+        {
+            title: 'AXHBarChart-default',
+            render: () => <AXBarChartDefaultExample/>
+        },
         {
             title: 'AXHBarChart-简单',
             render: () => <AXBarChartBaseExample/>

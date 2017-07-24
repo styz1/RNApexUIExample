@@ -14,15 +14,9 @@ const {AXPieChart} = require('react-native-apex-charts');
 
 
 const parameter = {
-    drawSliceTextEnabled: true,
-    usePercentValuesEnabled: false,
-    holeRadiusPercent: 0.4,
-    highlightPerTapEnabled: true,
-    transparentCircleRadiusPercent: 0.61,
     drawCenterTextEnabled: true,
-    centerText:'test',
-    centerTextColor:'red',
-    drawHoleEnabled: true,
+    centerText: 'test',
+    centerTextColor: 'red',
     rotationAngle: 0,
     rotationEnabled: true,
     drawSlicesUnderHoleEnabled: false,
@@ -62,8 +56,7 @@ class AXPieChartExample extends Component {
                                 fontFamily: 'HelveticaNeue-Light',
                                 fontSize: 12,
                             },
-                            valueTextColor: 'black',
-                            dataSet: {
+                            dataSets: [{
                                 xVals: ['Java', 'OC', 'JS', 'C++', 'PHP'],
                                 yVals: [0, 0, 0, 0, 0],
                                 yValuePosition: 'outside',
@@ -80,7 +73,7 @@ class AXPieChartExample extends Component {
                                 // minmumPercentValue: 1,
                                 holeRadiusPercent: 0.4,
                                 colors: ['red', 'green', 'blue', 'gray', 'black'],
-                            }
+                            }]
                         }}/>
 
         </View>;
@@ -115,8 +108,7 @@ class AXPieChartChangeExample extends Component {
                                 fontFamily: 'HelveticaNeue-Light',
                                 fontSize: 12,
                             },
-                            valueTextColor: 'black',
-                            dataSet: {
+                            dataSets: [{
                                 xVals: ['Java', 'OC', 'JS', 'C++', 'PHP'],
                                 yVals: this.state.yValues,
                                 yValuePosition: 'outside',
@@ -130,7 +122,7 @@ class AXPieChartChangeExample extends Component {
                                 minmumPercentValue: 1,
                                 selectionShift: 10,
                                 colors: ['red', 'green', 'blue', 'gray', 'black'],
-                            }
+                            }]
                         }}/>
 
         </View>;
@@ -143,8 +135,6 @@ class AXXPieChartExample extends Component {
         return <View style={{height: 300}}>
             <AXPieChart style={{flex: 1}}
                         parameter={{
-                            usePercentValuesEnabled: false,
-                            highlightPerTapEnabled: true,
                             drawCenterTextEnabled: false,
                             rotationAngle: 0,
                             rotationEnabled: true,
@@ -224,16 +214,45 @@ class AXXPieChartExample extends Component {
 }
 
 
+class AXPieChartDefaultExample extends Component {
+
+    render() {
+
+
+        return <View style={{height: 300}}>
+            <AXPieChart style={{flex: 1}}
+                        data={{
+                            dataSets: [{
+                                xVals: ['Java', 'OC', 'JS', 'C++', 'PHP', 'Java2', 'OC2', 'JS2', 'C++2', 'PHP2'],
+                                yVals: [40, 10, 20, 20, 10, 40, 10, 20, 20, 10],
+                                holeRadiusPercent: 0.7,
+                                valueLineColor: 'black',
+                                colors: ['red', 'green', 'blue', 'gray', 'black', 'red', 'green', 'blue', 'gray', 'black'],
+                            }, {
+                                xVals: ['Java', 'OC'],
+                                yVals: [30, 30],
+                                valueLineColor: 'black',
+                                colors: ['green', 'blue'],
+                            }]
+                        }}/>
+
+        </View>;
+    }
+}
 module.exports = {
     title: 'AXPieChartExample',
     description: '饼图',
     examples: [
         {
-            title: 'AXPieChart',
+            title: 'AXPieChart-default',
+            render: () => <AXPieChartDefaultExample />
+        },
+        {
+            title: 'AXPieChart-简单',
             render: () => <AXPieChartExample />
         },
         {
-            title: 'AXXPieChart',
+            title: 'AXPieChart-多数据',
             render: () => <AXXPieChartExample />
         }
     ]

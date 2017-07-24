@@ -10,7 +10,7 @@ import React, {Component, PropTypes} from 'react';
 import ReactNative, {View, Text} from 'react-native';
 import {Button} from 'react-native-apex-ui';
 
-const {AXBarChart}=require('react-native-apex-charts');
+const {AXBarChart} = require('react-native-apex-charts');
 
 const legend = {
     enabled: true,
@@ -32,8 +32,8 @@ const yaxis = {
     labelTextColor: 'black',
     // labelCount: 4,
     // forceLabelsEnabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
+    // drawGridLinesEnabled: false,
+    // drawAxisLineEnabled: false,
     customAxisMin: 0,
     // customAxisMax: 70,
 };
@@ -41,8 +41,8 @@ const yaxis = {
 const xaxis = {
     labelPosition: 'bottom',
     enabled: true,
-    drawGridLinesEnabled: false,
-    drawAxisLineEnabled: false,
+    // drawGridLinesEnabled: false,
+    // drawAxisLineEnabled: false,
     // labelCount:5,
 };
 
@@ -58,11 +58,11 @@ const parameter = {
         dataSetIndex: 0,
         stackIndex: 1,
     },
-    scaleXEnabled:true,
-    scaleYEnabled:true,
+    scaleXEnabled: true,
+    scaleYEnabled: true,
 }
 //type: 'rectangle',
-const marker={
+const marker = {
     type: 'balloon',
     font: {
         fontSize: 12,
@@ -78,31 +78,30 @@ class AXBarChartStackExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXBarChart style={{flex: 1}}
                         parameter={parameter}
                         legend={legend}
                         leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    dataSets:
-      [
-        {
-          yVals: [[10,1,2],[-7,1,1],[6,2,2],[-9,2,1],[6,1,2]],
-          stackLabels: ['label 1','label2','label3'],
-          drawValuesEnabled: true,
-          colors: ['#ff3b30','#33ffff','#3300ff'],
-          axisDependency:'left',
-        }
-      ]
-    }
-  }/>
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['1998', '2001', '2003', '2006', '2008'],
+                            dataSets: [
+                                {
+                                    yVals: [[10, 1, 2], [-7, 1, 1], [6, 2, 2], [-9, 2, 1], [6, 1, 2]],
+                                    stackLabels: ['label 1', 'label2', 'label3'],
+                                    drawValuesEnabled: true,
+                                    colors: ['#ff3b30', '#33ffff', '#3300ff'],
+                                    axisDependency: 'left',
+                                }
+                            ]
+                        }
+                        }/>
 
         </View>;
     }
@@ -114,39 +113,36 @@ class AXBarChartMultiExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXBarChart style={{flex:1}}
+        return <View style={{height: 300}}>
+            <AXBarChart style={{flex: 1}}
                         parameter={parameter}
                         legend={legend}
                         leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    dataSets:
-      [{
-        yVals: [10,10,10,10,20],
-        label: 'label 1',
-        color: '#ff3b30',
-        axisDependency:'left',
-      },
-      {
-        yVals: [10,10,10,10,20],
-        label: 'label 2',
-        color: '#ffe377',
-        axisDependency:'left',
-      },
-      ]
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['1998', '2001', '2003', '2006', '2008'],
+                            dataSets: [{
+                                yVals: [10, 10, 10, 10, 20],
+                                label: 'label 1',
+                                color: '#ff3b30',
+                                axisDependency: 'left',
+                            },
+                                {
+                                    yVals: [10, 10, 10, 10, 20],
+                                    label: 'label 2',
+                                    color: '#ffe377',
+                                    axisDependency: 'left',
+                                },
+                            ]
 
 
-
-
-    }
-  }/>
+                        }
+                        }/>
 
         </View>;
     }
@@ -157,51 +153,12 @@ class AXBarChartBaseExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXBarChart style={{flex:1}}
+        return <View style={{height: 300,backgroundColor:'white'}}>
+            <AXBarChart style={{flex: 1}}
                         parameter={parameter}
-                        onChartValueSelected={(e)=>{console.log("==>",e)}}
-                        legend={legend}
-                        leftAxis={yaxis}
-                        xAxis={xaxis}
-                        marker={marker}
-                        data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998'],
-    dataSets:
-      [{
-        yVals: [10],
-        label: 'label 1',
-        color: '#ff3b30',
-        axisDependency: 'left',
-        highlightColor:'#cccccc',
-      }]
-
-
-
-
-    }
-  }/>
-
-        </View>;
-    }
-}
-
-
-
-
-class AXBarChartColorsExample extends Component {
-
-    render() {
-
-
-        return <View style={{height:300}}>
-            <AXBarChart style={{flex:1}}
-                        parameter={parameter}
-                        onChartValueSelected={(e)=>{console.log("==>",e)}}
+                        onChartValueSelected={(e) => {
+                            console.log("==>", e)
+                        }}
                         legend={legend}
                         leftAxis={yaxis}
                         xAxis={xaxis}
@@ -211,17 +168,52 @@ class AXBarChartColorsExample extends Component {
                                 fontFamily: 'HelveticaNeue-Light',
                                 fontSize: 12,
                             },
-                            xVals: ['a','b','c','d','e'],
-                            dataSets:
-                                [{
-                                    yVals: [10,20,30,40,50],
-                                    label: 'label 1',
-                                    colors: ['#00ffff','red','blue','yellow','#003b30'],
-                                    axisDependency: 'left',
-                                    highlightColor:'#cccccc',
-                                }]
+                            xVals: ['1998'],
+                            dataSets: [{
+                                yVals: [10],
+                                label: 'label 1',
+                                color: '#ff3b30',
+                                axisDependency: 'left',
+                                highlightColor: '#cccccc',
+                            }]
 
 
+                        }
+                        }/>
+
+        </View>;
+    }
+}
+
+
+class AXBarChartColorsExample extends Component {
+
+    render() {
+
+
+        return <View style={{height: 300}}>
+            <AXBarChart style={{flex: 1}}
+                        parameter={parameter}
+                        onChartValueSelected={(e) => {
+                            console.log("==>", e)
+                        }}
+                        legend={legend}
+                        leftAxis={yaxis}
+                        xAxis={xaxis}
+                        marker={marker}
+                        data={{
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['a', 'b', 'c', 'd', 'e'],
+                            dataSets: [{
+                                yVals: [10, 20, 30, 40, 50],
+                                label: 'label 1',
+                                colors: ['#00ffff', 'red', 'blue', 'yellow', '#003b30'],
+                                axisDependency: 'left',
+                                highlightColor: '#cccccc',
+                            }]
 
 
                         }
@@ -236,39 +228,38 @@ class AXBarChartCombineExample extends Component {
     render() {
 
 
-        return <View style={{height:300}}>
-            <AXBarChart style={{flex:1}}
-                        parameter={{...parameter,highlightAllBarEnabled:true}}
+        return <View style={{height: 300}}>
+            <AXBarChart style={{flex: 1}}
+                        parameter={{...parameter, highlightAllBarEnabled: true}}
                         legend={legend}
                         leftAxis={yaxis}
                         xAxis={xaxis}
                         marker={marker}
                         data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    barWidth:0.3,
-    dataSets:
-      [
-        {
-          yVals: [[10,1],[7,2],[6,3],[9,4],[6,5]],
-          stackLabels: ['label1','label2'],
-          colors: ['#ff3b30','#33ffff'],
-          highlightColor:'#4ecc4a9f',
-          axisDependency:'left',
-        },
-        {
-        yVals: [10,10,10,10,20],
-        label: 'label1',
-        color: '#464aff',
-        highlightColor:'red',
-        axisDependency:'left',
-      }
-      ]
-    }
-  }/>
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['1998', '2001', '2003', '2006', '2008'],
+                            barWidth: 0.3,
+                            dataSets: [
+                                {
+                                    yVals: [[10, 1], [7, 2], [6, 3], [9, 4], [6, 5]],
+                                    stackLabels: ['label1', 'label2'],
+                                    colors: ['#ff3b30', '#33ffff'],
+                                    highlightColor: '#4ecc4a9f',
+                                    axisDependency: 'left',
+                                },
+                                {
+                                    yVals: [10, 10, 10, 10, 20],
+                                    label: 'label1',
+                                    color: '#464aff',
+                                    highlightColor: 'red',
+                                    axisDependency: 'left',
+                                }
+                            ]
+                        }
+                        }/>
 
         </View>;
     }
@@ -280,51 +271,86 @@ class AXBarChartChangeExample extends Component {
         super();
         this.state = {
             yValues: [10, 10, 10, 10, 20],
+            parameter:parameter,
         };
     }
 
     render() {
 
 
-        return <View style={{height:300}}>
+        return <View style={{height: 300}}>
             <Button
                 caption='change'
-                style={[ {borderWidth: 1}]}
-                onPress={()=>{this.setState({yValues:[4,1,23,20,10]})}}
+                style={[{borderWidth: 1}]}
+                onPress={() => {
+                    let parameter={...this.state.parameter};
+                    parameter.xAxisDuration=2;
+
+                    this.setState({parameter})
+                }}
             />
-            <AXBarChart style={{flex:1}}
-                        parameter={parameter}
+            <AXBarChart style={{flex: 1}}
+                        parameter={this.state.parameter}
                         legend={legend}
                         leftAxis={yaxis}
                         xAxis={xaxis}
                         data={{
-    valueFont: {
-      fontFamily: 'HelveticaNeue-Light',
-      fontSize: 12,
-    },
-    xVals: ['1998','2001','2003','2006','2008'],
-    barWidth:0.3,
-    dataSets:
-      [
-        {
-            yVals: this.state.yValues,
-            label: 'label 1',
-            color: '#464aff',
-            axisDependency:'left',
-        }
-      ]
-    }
-  }/>
+                            valueFont: {
+                                fontFamily: 'HelveticaNeue-Light',
+                                fontSize: 12,
+                            },
+                            xVals: ['1998', '2001', '2003', '2006', '2008'],
+                            barWidth: 0.3,
+                            dataSets: [
+                                {
+                                    yVals: this.state.yValues,
+                                    label: 'label 1',
+                                    color: '#464aff',
+                                    axisDependency: 'left',
+                                }
+                            ]
+                        }
+                        }/>
 
         </View>;
     }
 }
+
+
+class AXBarChartDefaultExample extends Component {
+
+    render() {
+
+
+        return <View style={{height: 300}}>
+            <AXBarChart style={{flex: 1}}
+                        xAxis={{
+                            yOffset:10,
+                            xOffset:10
+                        }}
+                        data={{
+                            xVals: ['a', 'b', 'c', 'd', 'e'],
+                            dataSets: [{
+                                yVals: [10, 20, 30, 40, 50],
+                                label: 'label 1',
+                            }]
+                        }
+                        }/>
+
+        </View>;
+    }
+}
+
 
 module.exports = {
     component: AXBarChartBaseExample,
     title: 'AXBarChartExample',
     description: '柱状图',
     examples: [
+        {
+            title: 'AXBarChart-default',
+            render: () => <AXBarChartDefaultExample/>
+        },
         {
             title: 'AXBarChart-简单',
             render: () => <AXBarChartBaseExample/>

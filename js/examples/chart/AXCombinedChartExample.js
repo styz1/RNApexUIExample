@@ -45,7 +45,7 @@ const leftAxis = {
         fontSize: 12,
     },
     labelPosition: 'outside',
-    labelTextColor: 'black',
+    labelTextColor: 'red',
     labelCount: 5,
     drawZeroLineEnabled: true,
     forceLabelsEnabled: true,
@@ -53,8 +53,8 @@ const leftAxis = {
     drawAxisLineEnabled: true,
     customAxisMax: 20,
     customAxisMin: 0,
-    title:'(中国)',
-    titlePosition:'top',
+    title: '(中国)',
+    titlePosition: 'top',
     valueFormatter: {
         minimumIntegerDigits: 1,
         maximumIntegerDigits: 2,
@@ -80,8 +80,8 @@ const rightAxis = {
     drawAxisLineEnabled: true,
     customAxisMax: 20,
     customAxisMin: 0,
-    title:'(中国)',
-    titlePosition:'top',
+    title: '(中国)',
+    titlePosition: 'top',
     // valueFormatter: {
     //     minimumIntegerDigits: 1,
     //     maximumIntegerDigits: 2,
@@ -111,10 +111,6 @@ const xAxis = {
 
 const lineData = {
     dataSets: [{
-        yVals: [4.2, 7, 6, 9, 6,],
-        label: 'line1',
-        color: '#514fb3',
-    }, {
         yVals: [8.6, 6, 7, 10, 5,],
         label: 'line2',
         lineWidth: 2,
@@ -125,6 +121,12 @@ const lineData = {
         drawCubicEnabled: true,
         drawCirclesEnabled: true,
         cubicIntensity: 0.2,
+    }, {
+        yVals: [4.2, 7, 6, 9, 6,],
+        label: 'line1',
+        color: '#514fb3',
+        fillColor: 'red',
+        drawFilledEnabled: true,
     }]
 }
 
@@ -331,6 +333,7 @@ class AXCombinedChartExample5 extends Component {
                                                                     fontFamily: 'HelveticaNeue-Light',
                                                                     fontSize: 12,
                                                                 },
+                                                                valueTextColor: 'red',
                                                                 xVals: xVals,
                                                                 barData: {},
                                                                 lineData: lineData,
@@ -364,11 +367,51 @@ class AXCombinedChartExample6 extends Component {
     }
 }
 
+class AXCombinedChartDefaultExample extends Component {
+
+    render() {
+        return <View style={{height: 300}}>
+            <AXCombinedChart style={{flex: 1}}
+                             leftAxis={{
+                                 customAxisMin: 0,
+                             }}
+                             data={{
+                                 xVals: xVals,
+                                 barData: {
+                                     dataSets: [{
+                                         yVals: [10, 10, 10, 10, 20],
+                                         label: 'bar1',
+                                         color: '#ff3b30',
+                                     }]
+                                 },
+                                 lineData: {
+                                     dataSets: [{
+                                         yVals: [8.6, 6, 7, 10, 5,],
+                                         label: 'line2',
+                                         color: '#4cd964',
+                                     }, {
+                                         yVals: [4.2, 7, 6, 9, 6,],
+                                         label: 'line1',
+                                         color: '#514fb3',
+                                         // fillColor:'red',
+                                     }]
+                                 },
+
+                             }}/>
+        </View>;
+    }
+}
+
+
 module
     .exports = {
     title: 'AXCombinedChartExample',
     description: '复合图',
     examples: [
+        {
+            title: 'default',
+            render: () => <AXCombinedChartDefaultExample />
+        },
         {
             title: '单图-线',
             render: () => <AXCombinedChartExample5 />
