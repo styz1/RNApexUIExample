@@ -20,14 +20,26 @@ class AXRadarChartDefaultExample extends Component {
 
         return <View style={{height: 300}}>
             <AXRadarChart style={{flex: 1}}
+                          parameter={{
+                              webLineWidth:0,
+                              webFillColors:['white','#eeeeee']
+                          }}
                           legend={{
                               enabled:false,
                           }}
+                          xAxis={{
+                              labelTextColor:'black',
+                          }}
+                          yAxis={{
+                              // drawLabelsEnabled:false,
+                              enabled:false,
+                          }}
+
                         data={{
-                            xVals: ['Java', 'OC', 'JS', 'C++', 'PHP'],
+                            xVals: ['Java', 'OC', 'JS', 'C++', 'PHP', 'PHP2'],
                             dataSets: [{
-                                yVals: [40, 10, 20, 20, 10],
-                                color: 'red',
+                                yVals: [40, 30, 20, 30, 20,90],
+                                fillGradientColors:["#67ABE0AA","#ffffff00"]
                             }]
                         }}/>
 
