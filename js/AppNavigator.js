@@ -2,7 +2,8 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import ReactNative, {View, Text, Platform, Navigator} from 'react-native';
+import ReactNative, {View, Text, Platform} from 'react-native';
+import {Navigator} from 'react-native-deprecated-custom-components';
 var ExampleList = require('./ExampleList');
 var ExampleContainer = require('./ExampleContainer');
 var NavigationBar = require('./NavigationBar');
@@ -33,9 +34,9 @@ class AppNavigator extends Component {
 			scene = <ExampleList navigator={navigator} />;
 		} else {
 			scene = (
-				<ExampleContainer 
+				<ExampleContainer
 					module={route.module}
-					navigator={navigator} 
+					navigator={navigator}
 				/>
 			);
 		}

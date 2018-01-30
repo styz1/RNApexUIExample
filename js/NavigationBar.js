@@ -2,7 +2,8 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import ReactNative, {View, Text, Navigator, Animated} from 'react-native';
+import ReactNative, {View, Text, Animated} from 'react-native';
+import {Navigator} from 'react-native-deprecated-custom-components';
 var NavBarConfig = require('./NavBarConfig');
 
 class NavigationBar extends Navigator.NavigationBar {

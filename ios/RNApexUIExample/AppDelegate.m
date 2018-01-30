@@ -16,9 +16,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSURL *jsCodeLocation;
-
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+  [self configRNWebsocketExecutorPort];
+  RCTBundleURLProvider *provider = [RCTBundleURLProvider sharedSettings];
+  [provider setJsLocation:@"192.168.10.3"];
+//  [provider setJsLocation:@"localhost"];
+  NSURL *jsCodeLocation = [provider jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"RNApexUIExample"
@@ -31,7 +33,18 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
   return YES;
+}
+
+/**
+ *  修改nodejs服务器启动端口后，也要一并修改此端口才能进入浏览器debug
+ */
+- (void)configRNWebsocketExecutorPort {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:@"websocket-executor-port" forKey:[NSString stringWithFormat:@"%d",8083]];
+  [defaults synchronize];
+  
 }
 
 @end

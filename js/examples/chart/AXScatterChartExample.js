@@ -131,10 +131,6 @@ class AXScatterChartDefaultExample extends Component {
                                         yVals: [10,13,14,5,6,7],
                                         label: 'label 1',
                                     }]
-
-
-
-
                             }
                             }/>
 

@@ -145,7 +145,7 @@ const marker = {
     // },
     color: '#FFffffAA',
     xAxisLabelEnabled: false,
-    labelEnabled: false,
+    labelEnabled: true,
     drawAllTipsEnabled: true,
     // positiveColor:'gray',
     // negativeColor:'blue',
@@ -370,11 +370,12 @@ class AXLineChartScopeExample extends Component {
                          scopeView={{
                              enabled:true,
                              thumbSize:30,
+                             height:40,
                          }}
                          data={{
-                             xVals: ['1998', '2001', '2002', '2003', '2004', '2005', '2006', '2007',
-                             '1998', '2001', '2002', '2003', '2004', '2005', '2006', '2007',
-                             '1998', '2001', '2002', '2003', '2004', '2005', '2006', '2007','2008'],
+                             xVals: ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008',
+                             '2009', '2010', '2011', '2012', '2013','2014', '2015', '2016', '2017',
+                             '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                              dataSets: [
                                  {
                                      yVals: [18.6, 16, 17, 10, 15, 16, 17, 10,

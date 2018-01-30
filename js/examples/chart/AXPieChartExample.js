@@ -51,6 +51,18 @@ class AXPieChartExample extends Component {
             <AXPieChart style={{flex: 1}}
                         parameter={parameter}
                         legend={legend}
+                        marker={{
+                            type: 'balloon',
+                            font: {
+                                fontFamily: 'HelveticaNeue-Bold',
+                                fontSize: 12,
+                            },
+                            color: '#FFFFFFE0',
+                            xAxisLabelEnabled: true,
+                            valueEnabled: false,
+                            percentEnabled: true,
+                            drawAllTipsEnabled: false,
+                        }}
                         data={{
                             valueFont: {
                                 fontFamily: 'HelveticaNeue-Light',
@@ -58,7 +70,7 @@ class AXPieChartExample extends Component {
                             },
                             dataSets: [{
                                 xVals: ['Java', 'OC', 'JS', 'C++', 'PHP'],
-                                yVals: [0, 0, 0, 0, 0],
+                                yVals: [20, 20, 30, 20, 20],
                                 yValuePosition: 'outside',
                                 xValuePosition: 'outside',
                                 sliceSpace: 2,
@@ -135,7 +147,9 @@ class AXXPieChartExample extends Component {
         return <View style={{height: 300}}>
             <AXPieChart style={{flex: 1}}
                         parameter={{
-                            drawCenterTextEnabled: false,
+                          drawCenterTextEnabled: true,
+                          centerText: 'test',
+                          centerTextColor: 'red',
                             rotationAngle: 0,
                             rotationEnabled: true,
                             drawSlicesUnderHoleEnabled: false,
@@ -151,9 +165,10 @@ class AXXPieChartExample extends Component {
                                 fontSize: 12,
                             },
                             color: '#FFFFFFE0',
-                            xAxisLabelEnabled: true,
-                            labelEnabled: true,
-                            drawAllTipsEnabled: false,
+                            xAxisLabelEnabled: false,
+                            // drawAllTipsEnabled:true,
+                            percentEnabled: true,
+                            valueEnabled: true,
                         }}
                         legend={{
                             enabled: true,
@@ -205,6 +220,7 @@ class AXXPieChartExample extends Component {
                                 drawValuesEnabled: true,
                                 entryLabelColor: 'black',
                                 valueTextColor: 'black',
+                                holeRadiusPercent: 0.4,
                                 colors: ['green', 'blue'],
                             }]
                         }}/>

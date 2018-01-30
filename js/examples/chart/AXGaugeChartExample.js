@@ -26,10 +26,12 @@ class AXGaugeChartExample extends Component {
 
         return <View style={{height:160,width:320}}>
           <AXGaugeChart style={{height:160,width:320}}
-                        parameter={{holeRadiusPercent:0.58,
-                        maxAngle:180,
-                        centerText: '30%',
-                        drawCenterTextEnabled: true,}}
+                        parameter={{
+                          holeRadiusPercent:0.58,
+                          maxAngle:180,
+                          centerText: '30%',
+                          drawCenterTextEnabled: true,
+                        }}
                         data={{
                             dataSet:{
                               yVals: [40],
@@ -38,7 +40,7 @@ class AXGaugeChartExample extends Component {
                               needleColor:'red',
                               label:'完成率',
                             }
-                         }}
+                        }}
           />
 
         </View>;

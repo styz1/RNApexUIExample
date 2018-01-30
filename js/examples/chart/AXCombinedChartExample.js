@@ -161,12 +161,14 @@ const barData_combined = {
             stackLabels: ['stack1', 'stack2'],
             colors: ['#ff3b30', '#33ffff'],
             highlightColor: '#4ecc4a9f',
+            drawValuesEnabled:true,
             axisDependency: 'right',
         },
         {
             yVals: [10, 10, 10, 10, 20],
             label: 'bar1',
             color: '#464aff',
+            drawValuesEnabled:true,
             highlightColor: 'red',
             axisDependency: 'right',
         }
@@ -416,25 +418,25 @@ module
             title: '单图-线',
             render: () => <AXCombinedChartExample5 />
         },
-        // {
-        //     title: '单图-柱',
-        //     render: () => <AXCombinedChartExample6 />
-        // },
-        // {
-        //     title: '基本',
-        //     render: () => <AXCombinedChartExample1 />
-        // },
-        // {
-        //     title: '堆',
-        //     render: () => <AXCombinedChartExample2 />
-        // },
-        // {
-        //     title: '并列',
-        //     render: () => <AXCombinedChartExample3 />
-        // },
-        // {
-        //     title: '柱状图复合',
-        //     render: () => <AXCombinedChartExample4 />
-        // },
+        {
+            title: '单图-柱',
+            render: () => <AXCombinedChartExample6 />
+        },
+        {
+            title: '基本',
+            render: () => <AXCombinedChartExample1 />
+        },
+        {
+            title: '堆',
+            render: () => <AXCombinedChartExample2 />
+        },
+        {
+            title: '并列',
+            render: () => <AXCombinedChartExample3 />
+        },
+        {
+            title: '柱状图复合',
+            render: () => <AXCombinedChartExample4 />
+        },
     ]
 }

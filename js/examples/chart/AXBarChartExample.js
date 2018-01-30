@@ -30,12 +30,7 @@ const yaxis = {
     },
     labelPosition: 'outside',
     labelTextColor: 'black',
-    // labelCount: 4,
-    // forceLabelsEnabled: true,
-    // drawGridLinesEnabled: false,
-    // drawAxisLineEnabled: false,
     customAxisMin: 0,
-    // customAxisMax: 70,
 };
 
 const xaxis = {
@@ -173,6 +168,7 @@ class AXBarChartBaseExample extends Component {
                                 yVals: [10],
                                 label: 'label 1',
                                 color: '#ff3b30',
+                                drawValuesEnabled:true,
                                 axisDependency: 'left',
                                 highlightColor: '#cccccc',
                             }]
@@ -333,6 +329,7 @@ class AXBarChartDefaultExample extends Component {
                             dataSets: [{
                                 yVals: [10, 20, 30, 40, 50],
                                 label: 'label 1',
+                                drawValuesEnabled:true,
                             }]
                         }
                         }/>

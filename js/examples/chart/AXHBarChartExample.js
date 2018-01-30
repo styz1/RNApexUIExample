@@ -30,12 +30,12 @@ const yaxis = {
     },
     labelPosition: 'outside',
     labelTextColor: 'black',
-    labelCount: 4,
+    labelCount: 5,
     forceLabelsEnabled: true,
     drawGridLinesEnabled: true,
     drawAxisLineEnabled: true,
     customAxisMin: 0,
-    customAxisMax:20,
+    customAxisMax: 20,
     title: '(y轴)',
     titlePosition: 'top',
     // xTitleOffset: -5,
@@ -169,7 +169,21 @@ class AXBarChartBaseExample extends Component {
                                       console.log("==>", e)
                                   }}
                                   legend={legend}
-                                  rightAxis={yaxis}
+                                  rightAxis={{labelFont: {
+                                      fontFamily: 'HelveticaNeue-Light',
+                                      fontSize: 12,
+                                  },
+                                  labelPosition: 'outside',
+                                  labelTextColor: 'black',
+                                  labelCount: 4,
+                                  forceLabelsEnabled: true,
+                                  drawGridLinesEnabled: true,
+                                  drawAxisLineEnabled: true,
+                                  customAxisMin: -20,
+                                  drawZeroLineEnabled: true,
+                                  customAxisMax: 40,
+                                  title: '(y轴)',
+                                  titlePosition: 'top'}}
                                   xAxis={xaxis}
                                   marker={marker}
                                   data={{
@@ -182,7 +196,7 @@ class AXBarChartBaseExample extends Component {
                                       horizontalValueAlignment: 'right',
                                       xVals: ['1998', '2001', '2003', '2006', '2008'],
                                       dataSets: [{
-                                          yVals: [10, 10, 10, 10, 20],
+                                          yVals: [-10, 10, 30, -5, 20],
                                           label: 'label 1',
                                           drawValuesEnabled: true,
                                           color: '#ff3b30',
