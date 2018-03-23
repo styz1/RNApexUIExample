@@ -18,7 +18,7 @@
 {
   [self configRNWebsocketExecutorPort];
   RCTBundleURLProvider *provider = [RCTBundleURLProvider sharedSettings];
-  [provider setJsLocation:@"192.168.10.3"];
+  [provider setJsLocation:@"192.168.10.5"];
 //  [provider setJsLocation:@"localhost"];
   NSURL *jsCodeLocation = [provider jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
