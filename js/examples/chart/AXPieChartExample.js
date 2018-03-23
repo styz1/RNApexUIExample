@@ -58,8 +58,8 @@ class AXPieChartExample extends Component {
                                 fontSize: 12,
                             },
                             color: '#FFFFFFE0',
-                            xAxisLabelEnabled: true,
-                            valueEnabled: false,
+                            xAxisLabelEnabled: false,
+                            valueEnabled: true,
                             percentEnabled: true,
                             drawAllTipsEnabled: false,
                         }}
@@ -166,7 +166,6 @@ class AXXPieChartExample extends Component {
                             },
                             color: '#FFFFFFE0',
                             xAxisLabelEnabled: false,
-                            // drawAllTipsEnabled:true,
                             percentEnabled: true,
                             valueEnabled: true,
                         }}
@@ -194,7 +193,7 @@ class AXXPieChartExample extends Component {
                             // valueTextColor: 'black',
                             dataSets: [{
                                 xVals: ['Java', 'OC', 'JS', 'C++', 'PHP', 'Java2', 'OC2', 'JS2', 'C++2', 'PHP2'],
-                                yVals: [40, 10, 20, 20, 10, 40, 10, 20, 20, 10],
+                                yVals: [40, 15, 20, 20, 13, 40, 10, 20, 20, 10],
                                 yValuePosition: 'outside',
                                 xValuePosition: 'outside',
                                 sliceSpace: 2,

@@ -162,7 +162,7 @@ const barData_combined = {
             colors: ['#ff3b30', '#33ffff'],
             highlightColor: '#4ecc4a9f',
             drawValuesEnabled:true,
-            axisDependency: 'right',
+            axisDependency: 'left',
         },
         {
             yVals: [10, 10, 10, 10, 20],
@@ -170,7 +170,7 @@ const barData_combined = {
             color: '#464aff',
             drawValuesEnabled:true,
             highlightColor: 'red',
-            axisDependency: 'right',
+            axisDependency: 'left',
         }
     ]
 }
@@ -212,7 +212,7 @@ class AXCombinedChartExample1 extends Component {
                              }}
                              parameter={parameter}
                              legend={legend}
-                             leftAxis={rightAxis}
+                             rightAxis={rightAxis}
                              xAxis={xAxis}
                              marker={marker}
                              data={{
@@ -240,7 +240,7 @@ class AXCombinedChartExample2 extends Component {
                                                             }}
                                                             parameter={parameter}
                                                             legend={legend}
-                                                            rightAxis={rightAxis}
+                                                            leftAxis={rightAxis}
                                                             xAxis={xAxis}
                                                             marker={marker}
                                                             data={{
@@ -267,7 +267,7 @@ class AXCombinedChartExample3 extends Component {
                                                             }}
                                                             parameter={parameter}
                                                             legend={legend}
-                                                            rightAxis={rightAxis}
+                                                            leftAxis={rightAxis}
                                                             xAxis={xAxis}
                                                             marker={marker}
                                                             data={{
@@ -294,7 +294,7 @@ class AXCombinedChartExample4 extends Component {
                                                             }}
                                                             parameter={parameter}
                                                             legend={legend}
-                                                            rightAxis={rightAxis}
+                                                            leftAxis={rightAxis}
                                                             xAxis={xAxis}
                                                             marker={marker}
                                                             data={{
@@ -354,7 +354,7 @@ class AXCombinedChartExample6 extends Component {
                                                             }}
                                                             parameter={parameter}
                                                             legend={legend}
-                                                            rightAxis={rightAxis}
+                                                            leftAxis={leftAxis}
                                                             xAxis={xAxis}
                                                             marker={marker}
                                                             data={{

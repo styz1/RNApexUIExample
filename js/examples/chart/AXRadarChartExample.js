@@ -31,15 +31,17 @@ class AXRadarChartDefaultExample extends Component {
                               labelTextColor:'black',
                           }}
                           yAxis={{
-                              // drawLabelsEnabled:false,
                               enabled:false,
                           }}
 
                         data={{
-                            xVals: ['Java', 'OC', 'JS', 'C++', 'PHP', 'PHP2'],
+                            xVals: ['资管', '服务', '股票', '功能'],
                             dataSets: [{
-                                yVals: [40, 30, 20, 30, 20,90],
+                                yVals: [40, 60, 20, 35],
                                 fillGradientColors:["#67ABE0AA","#ffffff00"]
+                            },{
+                                yVals: [25, 50, 40, 60],
+                                fillGradientColors:['red', '#ffffff00']
                             }]
                         }}/>
 
