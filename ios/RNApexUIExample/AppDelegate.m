@@ -42,7 +42,7 @@
  */
 - (void)configRNWebsocketExecutorPort {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setObject:@"websocket-executor-port" forKey:[NSString stringWithFormat:@"%d",8083]];
+  [defaults setObject:@"websocket-executor-port" forKey:[NSString stringWithFormat:@"%d",8081]];
   [defaults synchronize];
   
 }
