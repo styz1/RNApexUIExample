@@ -363,19 +363,27 @@ class AXLineChartScopeExample extends Component {
 
     render() {
 
+        const xVals=['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008',
+            '2009', '2010', '2011', '2012', '2013','2014', '2015', '2016', '2017',
+            '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025']
+
         //backgroundColor:'white'
         return <View style={{height: 300, backgroundColor: 'white'}}>
             <AXLineChart style={{flex: 1}}
-                        parameter={parameter}
+                        parameter={{
+                            ...parameter,
+                            zoom:{
+                                scaleX:xVals.length/5.0,
+                                transX:5,
+                            }
+                        }}
                          scopeView={{
                              enabled:true,
-                             thumbSize:30,
+                             thumbSize:15,
                              height:40,
                          }}
                          data={{
-                             xVals: ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008',
-                             '2009', '2010', '2011', '2012', '2013','2014', '2015', '2016', '2017',
-                             '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                             xVals: xVals,
                              dataSets: [
                                  {
                                      yVals: [18.6, 16, 17, 10, 15, 16, 17, 10,
